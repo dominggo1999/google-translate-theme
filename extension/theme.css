@@ -1,0 +1,595 @@
+/* :root {
+	--bg-color: #fbf1c7;
+	--main-color: #689d6a;
+	--caret-color: #689d6a;
+	--sub-color: #a89984;
+	--text-color: #3c3836;
+	--error-color: #cc241d;
+	--error-extra-color: #9d0006;
+	--colorful-error-color: #cc241d;
+	--colorful-error-extra-color: #9d0006;
+} */
+
+/* Header */
+#gb {
+    background-color : var(--bg-color)!important;
+}
+
+
+/* Box shadow below heaer Bottom */
+.ccvoYb{
+    box-shadow : none !important;
+    border-top-color : var(--main-color)!important;
+}
+
+/* Menu Icon*/
+#gbwa > div > a > svg {
+     color : var(--text-color)!important;
+}
+
+/* Before */
+#yDmH0d > c-wiz::before{
+    background-color : var(--bg-color)!important;
+}
+
+
+/* "Translate" Word On Top Left */
+#sdgBod > span.gb_Zd.gb_Vc, 
+#gb > div.gb_1d > div > div.gb_Mc > div > div > a > span.gb_Zd.gb_Vc{
+     color : var(--text-color)!important;
+}
+
+/* Three lines On Top Left */
+#gb > div.gb_Fd.gb_Wd.gb_Md.gb_Ld > div.gb_Ed.gb_Wc.gb_Xc > div:nth-child(1) > svg{
+     color : var(--text-color)!important;
+}
+
+
+/* Sign In Button*/
+#gb div.gb_Me > a {
+    background-color : var(--main-color)!important; 
+    color :  var(--bg-color)!important;
+}
+
+/*Google Menu Section*/
+#yDmH0d > c-wiz > div > div > c-wiz > div > div > ul *, 
+#gb > div.gb_Fd.gb_Wd.gb_Md.gb_Ld > div.gb_Qd.gb_Sa.gb_Ed > div:nth-child(2),
+#yDmH0d > c-wiz > div > div > c-wiz > div > div{
+    background-color : var(--bg-color)!important;
+    color : var(--text-color)!important;
+}
+
+#yDmH0d > c-wiz > div > div > c-wiz > div > div > div.WwFbJd a {
+    background-color : var(--main-color)!important;
+    color :  var(--bg-color)!important;
+}
+
+#yDmH0d > c-wiz > div > div > c-wiz > div > div > span{
+    display : none;
+}
+
+/* Sidebar */
+#gb > div.gb_1d > div {
+    background-color : var(--bg-color)!important;
+    color : var(--text-color)!important;
+}
+
+
+/* Parent  */
+#yDmH0d > c-wiz {
+    background-color : var(--bg-color)!important;
+}
+
+/* Bottom Navigation */
+
+/* Circle */
+#yDmH0d > c-wiz  nav > a  div.ySES5{
+    background: rgba(0,0,0,.1) !important;
+} 
+
+/* Middle Logo SVG */
+#yDmH0d > c-wiz  nav > a  div.ySES5 svg {
+    color : var(--text-color) !important;
+} 
+
+/* Text Below Circle */
+#yDmH0d > c-wiz  div.TcXXXb{
+    color : var(--text-color)!important;
+}
+
+
+/* 
+    Translation Type (Text/Document)
+*/
+#yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.hgbeOc {
+    background-color : var(--bg-color)!important;
+}
+
+/* Button On Translation Type */
+#yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.hgbeOc > nav > div button {
+    background-color : var(--main-color)!important; 
+    color :  var(--bg-color)!important;
+    border : none;
+}
+
+
+
+
+/* 
+    Translate Section
+*/
+
+/* Header */
+.zXU7Rb > c-wiz {
+    background : var(--bg-color)!important; 
+}
+
+/* Remove Header bg animation */
+.hgbeOc{
+    transition: none!important;
+}
+
+/* Tab Buttons Left */
+.zXU7Rb > c-wiz > div:nth-child(2) > div > div.VfPpkd-AznF2e-ZMv3u > div > div > span > button > span > span {
+    color : var(--sub-color)!important;
+} 
+
+/* Tab Button Active/Selected */
+.zXU7Rb > c-wiz > div:nth-child(2) > div > div.VfPpkd-AznF2e-ZMv3u > div > div > span > button[aria-selected="true"] > span > span {
+    color : var(--text-color)!important;
+}
+
+/* Tab Buttons Right */
+.zXU7Rb > c-wiz > div:nth-child(5) > div > div.VfPpkd-AznF2e-ZMv3u > div > div > span button > span > span {
+    color : var(--sub-color)!important;
+}
+
+/* Tab Button Active/Selected */
+.zXU7Rb > c-wiz > div:nth-child(5) > div > div.VfPpkd-AznF2e-ZMv3u > div > div > span > button[aria-selected="true"] > span > span {
+    color : var(--text-color)!important;
+}
+
+/* Mobile Tab Header */
+.zXU7Rb > c-wiz > .ooArgc {
+    color : var(--text-color)!important;
+}
+
+/* Tab border bottom */
+span[jsname="bN97Pc"]{
+    border-color:var(--main-color)!important;
+}
+
+/* Border Above Header */
+.k5v5Nb{
+    border:none!important;
+}
+
+/* Border Below Header */
+.zXU7Rb{
+    border:none!important;
+}
+
+/* Header Icons */
+#yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.OlSOob > c-wiz > div.ccvoYb > div.aCQag > c-wiz > div.zXU7Rb > c-wiz svg{
+    color :var(--main-color)!important;
+}
+
+/* Swap Icon */
+#yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.OlSOob > c-wiz > div.ccvoYb > div.aCQag > c-wiz > div.zXU7Rb > c-wiz i{
+    color :var(--main-color)!important;
+}
+
+/* Gradient */
+.akczyd > .X4DQ0::after {
+    background: linear-gradient(to right,rgba(15, 15, 15, 0),rgba(43, 43, 43, .08))!important;
+}
+
+/* Document mode */
+/* Document area*/
+.JqKQbd {
+    background : var(--bg-color)!important; 
+}
+
+/* Document area Message */
+.TEGJAb {
+    color :var(--main-color)!important;
+}
+
+/* Document button */
+.y9jKHb{
+    background-color : var(--main-color)!important; 
+    color :  var(--bg-color)!important;
+}
+
+/* Choose Document Message */
+.AarNVd{
+    color :  var(--main-color)!important;
+}
+
+/* Loading */
+.OucA2b, .AxqVh{
+    background-color : var(--bg-color)!important; 
+}
+
+/* Getting translation */
+.hbjvwb {
+    color :  var(--text-color)!important;
+}
+
+
+/* Translation */
+/* Origin */
+#yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.OlSOob > c-wiz > div.ccvoYb > div.AxqVh > div.OPPzxe > c-wiz.rm1UF.UnxENd {
+    background : var(--bg-color)!important; 
+    color : var(--text-color)!important;
+}
+
+/* Origin Icon */
+#yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.OlSOob > c-wiz > div.ccvoYb > div.AxqVh > div.OPPzxe > c-wiz.rm1UF.UnxENd i,
+#yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.OlSOob > c-wiz > div.ccvoYb > div.AxqVh > div.OPPzxe > c-wiz.rm1UF.UnxENd svg
+{
+    color : var(--sub-color)!important;
+} 
+
+
+/* Target */
+#yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.OlSOob > c-wiz > div.ccvoYb > div.AxqVh > div.OPPzxe > c-wiz.P6w8m.BDJ8fb {
+    background : var(--bg-color)!important; 
+    color : var(--text-color)!important;
+}
+
+/* Target Icon */
+#yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.OlSOob > c-wiz > div.ccvoYb > div.AxqVh > div.OPPzxe > c-wiz.P6w8m.BDJ8fb i, 
+#yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.OlSOob > c-wiz > div.ccvoYb > div.AxqVh > div.OPPzxe > c-wiz.P6w8m.BDJ8fb, svg {
+    color : var(--sub-color)!important;
+}
+
+/* Target Word Hover */
+#yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.OlSOob > c-wiz > div.ccvoYb > div.AxqVh > div.OPPzxe > c-wiz.P6w8m.BDJ8fb > div.dePhmb > div > div.J0lOec > span.VIiyi > span:hover{
+    background : var(--main-color)!important; 
+    color : var(--bg-color)!important;
+}
+
+/* Origin on result hover */
+.cEWAef * {
+    background : none !important;
+}
+
+
+
+/* Translation Reccomendation */ 
+#kvLWu {
+    border-top : 0 !important;
+}
+
+#kvLWu > li{
+    background : var(--bg-color)!important; 
+}
+
+#kvLWu > li > div.uNr6ee{
+    color : var(--text-color)!important;    
+} 
+
+#kvLWu > li > div.xUPQqb{
+    color : var(--sub-color)!important;    
+}
+
+/* Translation Reccomendation Selected */
+#kvLWu > li[aria-selected="true"]{
+    background : var(--sub-color)!important; 
+}
+
+#kvLWu > li[aria-selected="true"] > div.uNr6ee{
+    color : var(--bg-color)!important;    
+} 
+
+#kvLWu > li[aria-selected="true"] > div.xUPQqb{
+    color : var(--text-color)!important;    
+}
+
+
+/* Translation Placeholder */
+#yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.OlSOob > c-wiz > div.ccvoYb > div.AxqVh > div.OPPzxe > c-wiz.P6w8m > div.tm8pq {
+    color : var(--sub-color)!important;    
+}
+
+
+
+/* Target Inactive */
+#yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.OlSOob > c-wiz > div.ccvoYb > div.AxqVh > div.OPPzxe > c-wiz.P6w8m{
+    background : var(--bg-color)!important; 
+    color : var(--text-color)!important;
+}
+
+/* Text Area */
+#yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.OlSOob > c-wiz > div.ccvoYb > div.AxqVh > div.OPPzxe > c-wiz.rm1UF.UnxENd.dHeVVb > span > span > div > textarea {
+    color : var(--text-color)!important;
+}
+
+/* Result */
+#yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.OlSOob > c-wiz > div.ccvoYb > div.AxqVh > div.OPPzxe > c-wiz.P6w8m.BDJ8fb > div.dePhmb > div > div.J0lOec {
+    color : var(--text-color)!important;
+}
+
+
+/* Message On the bottom translation */
+#yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.OlSOob > c-wiz > div.ccvoYb > div.AxqVh > div.OPPzxe > c-wiz.rm1UF.UnxENd.dHeVVb > div:nth-child(5) > div > div > div{
+   color : var(--sub-color)!important; 
+} 
+
+/* Pronounciation */
+#yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.OlSOob > c-wiz > div.ccvoYb > div.AxqVh > div.OPPzxe > c-wiz.rm1UF.UnxENd.dHeVVb > div.UdTY9.BwTYAc > div.kO6q6e {
+    color : var(--sub-color)!important;
+}
+
+/* "Gender Spesific" message */
+#yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.OlSOob > c-wiz > div.ccvoYb > div.AxqVh > div.OPPzxe > c-wiz.P6w8m.BDJ8fb.FkMbO > div.HVGOKe {
+   color : var(--sub-color)!important; 
+}
+
+/* Learn More Link */
+#yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.OlSOob > c-wiz > div.ccvoYb > div.AxqVh > div.OPPzxe > c-wiz.P6w8m.BDJ8fb.FkMbO > div.HVGOKe a {
+   color : var(--main-color)!important; 
+}
+
+/* Restore Original */
+.kihvAe {
+   color : var(--main-color)!important; 
+    
+}
+
+/* Edited */
+.yieiFb {
+   color : var(--sub-color)!important; 
+}
+
+/* Gender */
+#yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.OlSOob > c-wiz > div.ccvoYb > div.AxqVh > div.OPPzxe > c-wiz.P6w8m.BDJ8fb.FkMbO > div.dePhmb > div > div.J0lOec > div {
+   color : var(--sub-color)!important; 
+}
+
+/* Message icon */
+#yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.OlSOob > c-wiz > div.ccvoYb > div.AxqVh > div.OPPzxe > c-wiz.rm1UF.UnxENd.dHeVVb > div:nth-child(5) > div i {
+    color : var(--main-color)!important;  
+} 
+
+/* Language Name on message */
+#yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.OlSOob > c-wiz > div.ccvoYb > div.AxqVh > div.OPPzxe > c-wiz.rm1UF.UnxENd.dHeVVb > div:nth-child(5) > div > div > div > span {
+    color : var(--main-color)!important;  
+}
+
+/* Total Chars */
+#yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.OlSOob > c-wiz > div.ccvoYb > div.AxqVh > div.OPPzxe > c-wiz.rm1UF.UnxENd > div.FFpbKc > span {
+    color : var(--main-color)!important;  
+}
+
+/* Microphone Icon */
+#ow85 > div > span > button > span:nth-child(3), #ow3388 > div > span > button > span:nth-child(3)  {
+    color : var(--sub-color)!important;  
+}
+
+/* Input Tool Logo */
+#ow89 > div > span > div .ita-kd-inputtools-div a {
+    color : var(--sub-color)!important;  
+}
+
+
+/* Details */
+#yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.OlSOob > c-wiz > div.kGmWO > c-wiz > section > div > div > div.Sp3AF > div > div,
+#yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.OlSOob > c-wiz > div.kGmWO > c-wiz > section > div > div > div.GQpbTd > div div
+{
+    background : var(--bg-color)!important;  
+    border : none;
+}
+
+
+/* Details Header */
+.nYkDR {
+    color : var(--sub-color)!important;  
+} 
+
+/* Word In Header */
+.S6GkK {
+    color : var(--main-color)!important;  
+}
+
+/* Section Number */
+.RSggmb{
+    color : var(--text-color)!important;
+    border-color :  var(--text-color)!important;
+}
+
+/* Sub header */
+.eIKIse{
+    color : var(--main-color)!important;  
+}
+
+/* Word definition */
+.fw3eif{
+    color : var(--text-color)!important;  
+}
+
+/* examples with quotes */
+.MZgjEb {
+    color : var(--sub-color)!important;  
+}
+
+
+/* Synonym title */
+.gHl6Mc.OvhKBb{
+    color : var(--main-color)!important;  
+}
+
+/* Word definitions list / buttons */
+span.PsfnLc{
+    color : var(--sub-color)!important;  
+    border-color : var(--sub-color)!important;  
+}
+
+/* Tab button */
+div.PG9puc{
+    background-color : var(--main-color)!important; 
+    color :  var(--bg-color)!important;
+}
+
+/* Fewer Definition Message */
+.qTO0c {
+    color : var(--main-color)!important;  
+}
+
+/* Arrow button beside fewer definition message */
+.qTO0c i {
+    color : var(--sub-color)!important;  
+}
+
+/* Sentences example */
+.AZPoqf.OvhKBb{
+    color : var(--text-color)!important;  
+}
+
+/* Informal Definition */
+.BL1djf.TA6GGb.OvhKBb{
+    color : var(--text-color)!important;  
+}
+
+/* Quote symbold */
+.Qk6AXd i {
+    color : var(--sub-color)!important;  
+}
+
+/* "Translation of" list */
+.kgnlhe {
+    color : var(--main-color)!important;  
+}
+
+.kgnlhe.FwR7Pc {
+    color : var(--bg-color)!important;   
+    background-color : var(--main-color)!important; 
+}
+
+/* "Translation of" children */
+.MtFg0{
+    color : var(--text-color)!important;  
+}
+
+/* Selected "Translation of" children */
+.MtFg0.FwR7Pc{
+    background-color : var(--main-color)!important; 
+    color :  var(--bg-color)!important;
+}
+
+/* Gender */
+.j7bWb {
+    color : var(--text-color)!important;  
+}
+
+/* See Also Message */
+.nYkDR {
+    color : var(--main-color)!important;  
+}
+
+/* Related List */
+.jodjCb {
+    color : var(--text-color)!important;  
+    border-color : var(--text-color)!important; 
+}
+
+/* Send Feedback Text */
+.a88hkc, .FvchS, .material-icons-extended.VfPpkd-kBDsod.p4g8M {
+    color : var(--text-color)!important;  
+}
+
+/* Show examples message */
+.VK4HE {
+    color : var(--main-color)!important;  
+}
+
+/* Show examples border */
+.ZShpvc{
+    border-color :  var(--main-color)!important;  
+}
+
+
+/* 
+    Language List
+*/
+
+/* Language List Header */
+.fMHXgc.qkH7ie{
+    background-color : var(--bg-color)!important; 
+}
+
+input.yFQBKb {
+    background-color : var(--bg-color)!important; 
+    color : var(--text-color)!important;  
+}
+
+input.yFQBKb::-webkit-input-placeholder { /* Edge */
+  color: var(--sub-color)!important;  
+}
+
+input.yFQBKb:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: var(--sub-color)!important;  
+}
+
+input.yFQBKb::placeholder {
+  color: var(--sub-color)!important;  
+}
+
+/* "Translate from" header */
+.fMHXgc.G13P7e{
+    background-color : var(--bg-color)!important; 
+    color: var(--sub-color)!important;  
+}
+
+/* "Translate from" header icon */
+.fMHXgc.G13P7e i{
+    color: var(--sub-color)!important;  
+}
+
+
+/* Body */
+.dykxn.C96yib.j33Gae, .vSUSRc {
+    background-color : var(--bg-color)!important;  
+}
+
+/* languge name */
+.Llmcnf{
+    color : var(--text-color)!important;  
+}
+
+/* icon */
+.qSb8Pe i, .qSb8Pe svg {
+    color : var(--sub-color)!important;  
+}
+
+/* Hover */
+.qSb8Pe:hover {
+    background-color : var(--main-color)!important;  
+}
+
+.qSb8Pe:hover .Llmcnf {
+    color : var(--bg-color)!important; 
+}
+
+/* selected language */
+.qSb8Pe.RCaXn.KKjvXb {
+    background-color : var(--main-color)!important;  
+}
+
+.qSb8Pe.RCaXn.KKjvXb .Llmcnf {
+    color : var(--bg-color)!important;  
+}
+
+/* When selected using tab */
+.qSb8Pe:focus {
+    background-color : var(--main-color)!important;  
+}
+
+.qSb8Pe:focus .Llmcnf {
+    color : var(--sub-color)!important;  
+}
+
+
+
+
