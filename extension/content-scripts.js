@@ -1,5 +1,13 @@
 /* eslint-disable array-callback-return */
 
+const getValueInStore = (key) => {
+  return new Promise((resolve, reject) => {
+    chrome.storage.local.get([key], (result) => {
+      resolve(result);
+    });
+  });
+};
+
 const getAllThemes = () => {
   return new Promise((resolve, reject) => {
     chrome.runtime.sendMessage({
@@ -17,15 +25,6 @@ const property = {
   textColor: '--text-color',
 };
 
-// Initial Load, get activeTheme
-const getActiveTheme = () => {
-  return new Promise((resolve, reject) => {
-    chrome.storage.local.get(['activeTheme'], (result) => {
-      resolve(result);
-    });
-  });
-};
-
 const changeCSSVariables = (colors) => {
   const r = document.querySelector(':root');
 
@@ -34,26 +33,34 @@ const changeCSSVariables = (colors) => {
   });
 };
 
-const applyDefaultTheme = async () => {
-  const { activeTheme } = await getActiveTheme();
-  console.log(activeTheme);
+const applyTheme = async () => {
+  const { activeTheme } = await getValueInStore('activeTheme');
+  const { isCustomTheme } = await getValueInStore('isCustomTheme');
+  const { customTheme } = await getValueInStore('customTheme');
 
-  getAllThemes()
-    .then((res) => {
-      const { themes } = res;
-      const themeIndex = themes.map((i) => i.name).indexOf(activeTheme);
+  if(!isCustomTheme) {
+    getAllThemes()
+      .then((res) => {
+        const { themes } = res;
+        const themeIndex = themes.map((i) => i.name).indexOf(activeTheme);
 
-      const { name, ...colors } = themes[themeIndex];
+        const { name, ...colors } = themes[themeIndex];
 
-      changeCSSVariables(colors);
-    });
+        changeCSSVariables(colors);
+      });
+  }else {
+    // Change display theme to custom color if user want to use custom theme
+    const { name, ...colors } = customTheme;
+
+    changeCSSVariables(colors);
+  }
 };
 
-applyDefaultTheme();
+applyTheme();
 
 // Listen for call from popup or option
 chrome.runtime.onMessage.addListener((request) => {
-  const { theme: themeName, message } = request;
+  const { theme: themeName, message, useCustomTheme } = request;
 
   if(message === 'changeTheme') {
     getAllThemes()
@@ -64,6 +71,19 @@ chrome.runtime.onMessage.addListener((request) => {
         const { name, ...colors } = themes[themeIndex];
 
         changeCSSVariables(colors);
+      });
+  }
+
+  if(message === 'toggleCustomTheme') {
+    getValueInStore('customTheme')
+      .then((res) => {
+        // Change display theme to custom color if user want to use custom theme
+        if(useCustomTheme) {
+          const { customTheme } = res;
+          const { name, ...colors } = customTheme;
+
+          changeCSSVariables(colors);
+        }
       });
   }
 });

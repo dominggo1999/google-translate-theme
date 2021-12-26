@@ -1,93 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   PopupWrapper, Tab, Tabs, TabList, TabPanel, ThemeList, ThemeButton, SearchField,
 } from './Popup.style';
-import { themes } from '../themes';
-
-const isExtension = chrome.storage;
-
-const formatName = (name) => {
-  const str = name.split('_').join(' ');
-
-  return str.charAt(0).toUpperCase() + str.slice(1);
-};
+import useTheme from '../hooks/useTheme';
+import { formatName } from '../util';
+import useFilterTheme from '../hooks/useFilterTheme';
+import Custom from './Custom';
+import ThemeName from './ThemeName';
 
 const Popup = () => {
-  const [theme, setTheme] = useState();
-  const [list, setList] = useState(themes);
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState(1);
+  const props = useTheme();
+  const {
+    theme,
+    name,
+    changeTheme,
+    useCustom,
+    customColors,
+  } = props;
 
-  // Initial Load, get activeTheme
-  const getActiveTheme = () => {
-    return new Promise((resolve, reject) => {
-      chrome.storage.local.get(['activeTheme'], (result) => {
-        resolve(result);
-      });
-    });
-  };
+  const { list, filterTheme } = useFilterTheme();
 
-  const changeTheme = async (themeName) => {
-    // Send Message To ContentScript to manipulate page
-    await chrome.tabs?.query({}, (tabs) => {
-      tabs.forEach((tab) => {
-        chrome.tabs.sendMessage(tab.id, {
-          theme: themeName,
-          message: 'changeTheme',
-        });
-      });
-    });
+  if(!theme) return <PopupWrapper />;
 
-    // Send message to bg.js to save data
-    await chrome.runtime?.sendMessage({
-      message: 'saveTheme',
-      theme: themeName,
-    });
-
-    // Change Theme Local State
-    const themeIndex = themes.map((i) => i.name).indexOf(themeName);
-
-    const { name, ...colors } = themes[themeIndex];
-
-    setTheme(colors);
-  };
-
-  useEffect(() => {
-    const getTheme = async () => {
-      if(!isExtension) {
-        // Just For testing
-        const devTheme = {
-          name: '8008',
-          bgColor: '#333a45',
-          mainColor: '#f44c7f',
-          subColor: '#939eae',
-          textColor: '#e9ecf0',
-        };
-
-        setTheme(devTheme);
-      }else{
-        const { activeTheme } = await getActiveTheme();
-        // Change Theme Local State
-        const themeIndex = themes.map((i) => i.name).indexOf(activeTheme);
-
-        const { name, ...colors } = themes[themeIndex];
-        setTheme(colors);
-      }
-    };
-
-    getTheme();
-  }, []);
-
-  const filterTheme = (e) => {
-    const s = e.target.value;
-
-    const filtered = themes.filter((i) => {
-      return i.name.indexOf(s) === 0;
-    });
-
-    setList(filtered);
-  };
-
-  if(!theme) return null;
+  console.log(useCustom);
 
   return (
     <PopupWrapper>
@@ -101,10 +37,14 @@ const Popup = () => {
           color={theme.textColor}
           main={theme.mainColor}
         >
-          <Tab>Settings</Tab>
-          <Tab>Custom Settings</Tab>
+          <Tab>Presets</Tab>
+          <Tab>Custom</Tab>
         </TabList>
-
+        <ThemeName
+          useCustom={useCustom}
+          name={name}
+          theme={theme}
+        />
         {
           activeTab === 0 && (
             <SearchField>
@@ -140,7 +80,7 @@ const Popup = () => {
           </ThemeList>
         </TabPanel>
         <TabPanel>
-          custom settings
+          <Custom {...props} />
         </TabPanel>
       </Tabs>
     </PopupWrapper>
