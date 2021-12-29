@@ -268,7 +268,8 @@ export const InputField = styled.div`
       pr-2
       pl-5 
       rounded-full
-      py-1
+      py-1 
+      lowercase
     `}
   }
 

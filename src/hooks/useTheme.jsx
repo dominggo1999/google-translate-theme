@@ -158,6 +158,13 @@ const useTheme = () => {
   };
 
   const loadPreset = async () => {
+    const themeIndex = themes.map((i) => i.name).indexOf(name);
+
+    const newCustomValues = themes[themeIndex];
+    const { name: _, ...colors } = newCustomValues;
+
+    setCustomColors(colors);
+
     // Save to background
     await chrome.runtime?.sendMessage({
       message: 'loadPreset',
