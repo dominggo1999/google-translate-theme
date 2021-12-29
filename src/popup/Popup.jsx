@@ -23,8 +23,6 @@ const Popup = () => {
 
   if(!theme) return <PopupWrapper />;
 
-  console.log(useCustom);
-
   return (
     <PopupWrapper>
       <Tabs

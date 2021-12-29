@@ -129,8 +129,32 @@ const useTheme = () => {
     });
   };
 
-  const changeColor = (propertyName, value) => {
-    console.log(propertyName, value);
+  const changeColor = async (propertyName, value) => {
+    // Change PopUp State
+    setCustomColors((prev) => {
+      return {
+        ...prev,
+        [propertyName]: value,
+      };
+    });
+
+    // Call content script to manipulate page
+    await chrome.tabs?.query({}, (tabs) => {
+      tabs.forEach((tab) => {
+        chrome.tabs.sendMessage(tab.id, {
+          message: 'changeCustomColor',
+          propertyName,
+          value,
+        });
+      });
+    });
+
+    // Call bg.js to save props
+    await chrome.runtime?.sendMessage({
+      message: 'saveCustomColors',
+      propertyName,
+      value,
+    });
   };
 
   const loadPreset = async () => {

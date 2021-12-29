@@ -89,6 +89,27 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     });
   }
 
+  if(message === 'saveCustomColors') {
+    const saveCustomColors = async () => {
+      const { customTheme } = await getValueInStore('customTheme');
+      const { isCustomTheme } = await getValueInStore('isCustomTheme');
+
+      if(!isCustomTheme) return;
+
+      const { propertyName, value } = request;
+      const newThemeColors = {
+        ...customTheme,
+        [propertyName]: value,
+      };
+
+      chrome.storage.local.set({
+        customTheme: newThemeColors,
+      });
+    };
+
+    saveCustomColors();
+  }
+
   if(message === 'loadPreset') {
     const changeCustomTheme = async () => {
       const { isCustomTheme } = await getValueInStore('isCustomTheme');

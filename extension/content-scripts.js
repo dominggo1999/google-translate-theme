@@ -86,4 +86,19 @@ chrome.runtime.onMessage.addListener((request) => {
         }
       });
   }
+
+  if(message === 'changeCustomColor') {
+    getValueInStore('customTheme')
+      .then((res) => {
+        // Change display theme to custom color if user want to use custom theme
+        const { customTheme } = res;
+        const { name, ...colors } = customTheme;
+        const { propertyName, value } = request;
+
+        changeCSSVariables({
+          ...colors,
+          [propertyName]: value,
+        });
+      });
+  }
 });
