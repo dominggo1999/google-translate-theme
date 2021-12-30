@@ -16,7 +16,12 @@ const Popup = () => {
     name,
     changeTheme,
     useCustom,
+    customColors,
   } = props;
+
+  const popupColor = (prop) => {
+    return useCustom ? customColors[prop] : theme[prop];
+  };
 
   const { list, filterTheme } = useFilterTheme();
 
@@ -30,14 +35,15 @@ const Popup = () => {
       >
         {/* Tab Navigation */}
         <TabList
-          bg={theme.bgColor}
-          color={theme.textColor}
-          main={theme.mainColor}
+          bg={() => popupColor('bgColor')}
+          color={() => popupColor('textColor')}
+          main={() => popupColor('mainColor')}
         >
           <Tab>Presets</Tab>
           <Tab>Custom</Tab>
         </TabList>
         <ThemeName
+          popupColor={popupColor}
           useCustom={useCustom}
           name={name}
           theme={theme}
