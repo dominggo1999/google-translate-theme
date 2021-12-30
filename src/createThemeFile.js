@@ -1,7 +1,10 @@
 const fs = require('fs');
 const { resolve } = require('path');
 
-fs.copyFile(resolve(__dirname, './themes.js'), resolve(__dirname, '../extension/themes.js'), (err) => {
+const srcDir = resolve(__dirname, './themes.js');
+const targetDir = resolve(__dirname, '../extension/themes.js');
+
+fs.copyFile(srcDir, targetDir, (err) => {
   if (err) throw err;
-  console.log('copied');
+  console.log('Theme file copied to dist');
 });

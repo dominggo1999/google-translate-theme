@@ -1,0 +1,49 @@
+{
+  "manifest_version": 2,
+  "name": "Google Translate Theme",
+  "version": "1.0",
+  "description": "Change And Customize Google Translate Color Theme",
+  "icons": {
+    "16": "./assets/icon-512.png",
+    "48": "./assets/icon-512.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://translate.google.com/*"
+      ],
+      "js": [
+        "content-scripts.js"
+      ],
+      "css": [
+        "theme.css"
+      ],
+      "all_frames": true,
+      "run_at": "document_start"
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "options_page": {
+    "page" : "./dist/options/index.html"
+  },
+  "browser_action": {
+    "default_icon": {
+      "19": "./assets/icon-512.png",
+      "38": "./assets/icon-512.png"
+    },
+    "default_title": "Google Translate Theme",
+    "default_popup": "./dist/popup/index.html"
+  },
+  "permissions": [
+    "*://*/*",
+    "tabs",
+    "storage",
+    "activeTab",
+    "unlimitedStorage"
+  ],
+  "web_accessible_resources": [
+    "themes.json"
+  ]
+}
