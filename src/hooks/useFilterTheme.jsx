@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { themes } from '../../extension/themes';
+import { themes } from '../themes';
 
 const useFilterTheme = () => {
   const [list, setList] = useState(themes);
