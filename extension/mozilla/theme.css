@@ -1,14 +1,14 @@
-/* :root {
-	--bg-color: #fbf1c7;
-	--main-color: #689d6a;
-	--caret-color: #689d6a;
-	--sub-color: #a89984;
-	--text-color: #3c3836;
-	--error-color: #cc241d;
-	--error-extra-color: #9d0006;
+:root {
+	--bg-color: #282828;
+	--main-color: #d79921;
+	--caret-color: #fabd2f;
+	--sub-color: #665c54;
+	--text-color: #ebdbb2;
+	--error-color: #fb4934;
+	--error-extra-color: #cc241d;
 	--colorful-error-color: #cc241d;
 	--colorful-error-extra-color: #9d0006;
-} */
+}
 
 /* Header */
 #gb {
@@ -19,7 +19,7 @@
 /* Box shadow below heaer Bottom */
 .ccvoYb{
     box-shadow : none !important;
-    border-top-color : var(--main-color)!important;
+    border-top-color : var(--bg-color)!important;
 }
 
 /* Menu Icon*/
@@ -106,13 +106,15 @@
 }
 
 /* Button On Translation Type */
-#yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.hgbeOc > nav > div button {
+ .hgbeOc > nav > div button {
     background-color : var(--main-color)!important; 
-    color :  var(--bg-color)!important;
     border : none;
 }
 
-
+.hgbeOc > nav > div button .VfPpkd-vQzf8d, 
+.hgbeOc > nav > div button i.material-icons-extended.VfPpkd-kBDsod.ep0rzf{
+    color :  var(--bg-color)!important;    
+}
 
 
 /* 
@@ -589,6 +591,204 @@ input.yFQBKb::placeholder {
 .qSb8Pe:focus .Llmcnf {
     color : var(--sub-color)!important;  
 }
+
+
+/* Saved words */
+ol.WMHbxd , c-wiz.uojYg.Jf2lJc.i6oIBe.fTtg4e , .uojYg {
+    background-color : var(--bg-color)!important;  
+}
+
+/* Header */
+.B3AePc{
+    background-color : var(--bg-color)!important;  
+}
+
+/* Header Title */
+.AP34ab{
+    color : var(--text-color)!important;  
+}
+
+/* Header Search Input*/
+input.vxsGZ{
+    color : var(--text-color)!important;  
+}
+
+input.vxsGZ::placeholder {
+    color : var(--sub-color)!important;  
+}
+
+/* Search Field Title */
+.eHilac{
+    color :  var(--sub-color)!important; 
+}
+
+/* Sort Text */
+.zRANPd:not(:disabled){
+    color : var(--sub-color)!important;  
+}
+
+/* Sort Menu */
+ul.VfPpkd-StrnGf-rymPhb.DMZ54e{
+    background-color : var(--bg-color)!important;  
+    color : var(--text-color)!important;  
+}
+
+ul.VfPpkd-StrnGf-rymPhb.DMZ54e li:hover{
+    background-color : var(--main-color)!important;  
+    color : var(--bg-color)!important;  
+}
+
+/* Total / Pagination */
+/* Wrapper */
+.j27i7{
+    background-color : var(--bg-color)!important;   
+    color : var(--main-color)!important;  
+}
+
+/* Text */
+#yDmH0d > c-wiz > div > div > c-wiz > div > div > span.pt8wXd{
+    color : var(--main-color)!important;  
+    display:block!important;
+}
+
+/* Check mark */
+ul.VfPpkd-StrnGf-rymPhb.DMZ54e i{
+    color : var(--sub-color)!important;  
+}
+
+/* Clear all saved */
+li.VfPpkd-StrnGf-rymPhb-ibnC6b{
+    color : var(--main-color)!important;  
+}
+
+li.VfPpkd-StrnGf-rymPhb-ibnC6b:hover{
+    color : var(--bg-color)!important;  
+}
+
+
+/* Word List */
+.tvua2{
+    background-color : var(--bg-color)!important;  
+    border-color : var(--bg-color)!important;  
+}
+
+
+/*  Target and Origin Language */
+.v2OCrb.NbyP5.Xn3qxe{
+    border-color : var(--sub-color)!important;       
+    color : var(--sub-color)!important;  
+}
+
+/* Star symbol */
+.VfPpkd-Bz112c-LgbsSe-OWXEXe-IT5dJd .VfPpkd-Bz112c-kBDsod.VfPpkd-Bz112c-kBDsod-OWXEXe-IT5dJd {
+    color : var(--main-color)!important; 
+}
+
+/* Origin Word */
+.kgJkHd.OvhKBb{
+    color : var(--main-color)!important; 
+}
+
+/* Definition */
+.HYAIUe.OvhKBb{
+    color : var(--sub-color)!important; 
+}
+
+/* Not Found Message Button */
+.VfPpkd-vQzf8d{
+    color : var(--sub-color)!important; 
+}
+
+.VfPpkd-dgl2Hf-ppHlrf-sM5MNb .VfPpkd-Jh9lGc{
+    border-color : var(--sub-color)!important; 
+} 
+
+
+/* History */
+.GKdr2{
+    background-color : var(--bg-color)!important;  
+}
+
+/* Header */
+.XMNbjd{
+    color : var(--main-color)!important; 
+}
+
+/* No History */
+
+.trWsae, .nIvUSc{
+    color : var(--sub-color)!important; 
+} 
+
+.nIvUSc a {
+    color : var(--main-color)!important; 
+}
+
+/* Manage Activity link */
+a.SdtK5b{
+    color : var(--main-color)!important; 
+}
+
+
+/* List */
+.vvNkBd{
+    background-color : var(--bg-color)!important;  
+    border-color : var(--bg-color)!important;  
+}
+
+/* Origin */
+.EYBmYc{
+    color : var(--main-color)!important; 
+}
+
+.v9p7kc{
+    color : var(--sub-color)!important; 
+}
+
+/* meaning */
+.uqiNJb{
+    color : var(--sub-color)!important;    
+}
+
+/* Microphone Logo */
+.material-icons-extended.VfPpkd-Bz112c-kBDsod{
+    color : var(--sub-color)!important;    
+}
+
+/* Google Sheet Logo */
+.material-icons-extended.VfPpkd-kBDsod{
+    color : var(--sub-color)!important;
+}
+
+/* Selected Word Details */
+.zWtKC, .a2Icud{
+    background: var(--bg-color)!important; 
+}
+
+.jTj8gd.XzOhkf, .Dwvecf, .zWtKC, .Sp3AF{
+    border: none !important;
+}
+
+.GQpbTd{
+    padding : 0 !important;
+}
+
+/* Selected Word origin */
+.aia4Ud span {
+    color : var(--text-color)!important;
+}
+
+/* Selected word definition */
+.D4w5q{
+    color : var(--sub-color)!important;
+}
+
+/* Loader */
+.xu46lf > div{
+    border-color: var(--main-color)!important; 
+}
+
+
 
 
 
