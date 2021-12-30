@@ -1,8 +1,12 @@
 /* eslint-disable array-callback-return */
 
+const extensionStorage = chrome ? chrome.storage.local : browser.storage.local;
+
+const runtime = chrome ? chrome.runtime : browser.runtime;
+
 const getValueInStore = (key) => {
   return new Promise((resolve, reject) => {
-    chrome.storage.local.get([key], (result) => {
+    extensionStorage.get([key], (result) => {
       resolve(result);
     });
   });
@@ -10,7 +14,7 @@ const getValueInStore = (key) => {
 
 const getAllThemes = () => {
   return new Promise((resolve, reject) => {
-    chrome.runtime.sendMessage({
+    runtime.sendMessage({
       message: 'getAllTheme',
     }, (res) => {
       resolve(res);
@@ -59,7 +63,7 @@ const applyTheme = async () => {
 applyTheme();
 
 // Listen for call from popup or option
-chrome.runtime.onMessage.addListener((request) => {
+runtime.onMessage.addListener((request) => {
   const { theme: themeName, message, useCustomTheme } = request;
 
   if(message === 'changeTheme') {

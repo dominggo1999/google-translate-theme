@@ -4,24 +4,28 @@ export const formatName = (name) => {
   return str.charAt(0).toUpperCase() + str.slice(1);
 };
 
-export const isExtension = chrome.storage;
+const runtime = chrome ? chrome.runtime : browser.runtime;
+const browserTabs = chrome ? chrome.tabs : browser.tabs;
+const extensionStorage = chrome ? chrome.storage.local : browser.storage.local;
+
+export const isExtension = chrome.storage || browser.storage;
 
 export const getValueInStore = (key) => {
   return new Promise((resolve, reject) => {
-    chrome.storage.local.get([key], (result) => {
+    extensionStorage.get([key], (result) => {
       resolve(result);
     });
   });
 };
 
 export const messageToBackground = async (message) => {
-  await chrome.runtime?.sendMessage(message);
+  await runtime?.sendMessage(message);
 };
 
 export const messageToContentScript = async (message) => {
-  await chrome.tabs?.query({}, (tabs) => {
-    tabs.forEach((tab) => {
-      chrome.tabs.sendMessage(tab.id, message);
+  await browserTabs?.query({}, (tabs) => {
+    tabs?.forEach((tab) => {
+      browserTabs.sendMessage(tab.id, message);
     });
   });
 };

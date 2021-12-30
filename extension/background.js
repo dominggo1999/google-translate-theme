@@ -10,17 +10,21 @@ const DEFAULT_CUSTOM_THEME = {
   textColor: '#e9ecf0',
 };
 
+const extensionStorage = chrome.storage.local || browser.storage.local;
+const runtime = chrome ? chrome.runtime : browser.runtime;
+
 const getValueInStore = (key) => {
   return new Promise((resolve, reject) => {
-    chrome.storage.local.get([key], (result) => {
+    extensionStorage.get([key], (result) => {
       resolve(result);
     });
   });
 };
 
-const setValueInStore = async (values, callback) => {
-  await chrome.storage.local.set(values)
-    .then(() => callback && callback());
+const setValueInStore = async (values, callback = () => {}) => {
+  await extensionStorage.set(values);
+
+  callback();
 };
 
 const initTheme = async () => {
@@ -54,7 +58,7 @@ const initTheme = async () => {
 initTheme();
 
 // Listen for call from popup or option
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+runtime.onMessage.addListener((request, sender, sendResponse) => {
   const {
     message, theme, useCustomTheme, newCustomValues,
   } = request;

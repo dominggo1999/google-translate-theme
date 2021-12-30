@@ -10,7 +10,7 @@ import {
 export const PopupWrapper = styled.div`
   ${tw`
     w-[345px]
-    h-[505px]
+    h-[520px]
   `}
 `;
 
