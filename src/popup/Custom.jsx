@@ -7,33 +7,10 @@ import {
   SwitchButtonTrack,
   LoadFromButton,
   Colors,
-
 } from './Popup.style';
+import { formatName } from '../util';
 
 import ColorPicker from './ColorPicker';
-
-const defaultProperties = [
-  {
-    name: 'bgColor',
-    label: 'Background ',
-    display: false,
-  },
-  {
-    name: 'textColor',
-    label: 'Text',
-    display: false,
-  },
-  {
-    name: 'mainColor',
-    label: 'Main',
-    display: false,
-  },
-  {
-    name: 'subColor',
-    label: 'Sub',
-    display: false,
-  },
-];
 
 const Custom = ({
   theme,
@@ -68,7 +45,7 @@ const Custom = ({
                   backgroundColor: theme.bgColor,
                   color: theme.mainColor,
                 }}
-              >Load from {name}
+              >Load from {name && formatName(name)}
               </LoadFromButton>
               <Colors>
                 {properties.map((i) => {

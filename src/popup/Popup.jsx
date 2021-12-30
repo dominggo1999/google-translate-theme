@@ -16,7 +16,6 @@ const Popup = () => {
     name,
     changeTheme,
     useCustom,
-    customColors,
   } = props;
 
   const { list, filterTheme } = useFilterTheme();

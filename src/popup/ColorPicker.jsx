@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { HexColorPicker, HexColorInput } from 'react-colorful';
 import { IoIosColorPalette } from 'react-icons/io';
 import {
@@ -40,7 +40,7 @@ const ColorPicker = ({ item, color, changeColor }) => {
           onChange={(val) => handleChange(val)}
           color={color}
         />
-        ) }
+        )}
         <ToggleButton onClick={handleClick}>
           <IoIosColorPalette />
         </ToggleButton>

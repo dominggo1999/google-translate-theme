@@ -13,3 +13,15 @@ export const getValueInStore = (key) => {
     });
   });
 };
+
+export const messageToBackground = async (message) => {
+  await chrome.runtime?.sendMessage(message);
+};
+
+export const messageToContentScript = async (message) => {
+  await chrome.tabs?.query({}, (tabs) => {
+    tabs.forEach((tab) => {
+      chrome.tabs.sendMessage(tab.id, message);
+    });
+  });
+};

@@ -3,6 +3,8 @@ import { themes } from '../themes';
 import {
   isExtension,
   getValueInStore,
+  messageToBackground,
+  messageToContentScript,
 } from '../util';
 
 // Just For testing
@@ -14,6 +16,7 @@ const devTheme = {
   textColor: '#e9ecf0',
 };
 
+// CSS Properties that need to control for theme
 const defaultProperties = [
   {
     name: 'bgColor',
@@ -57,35 +60,25 @@ const useTheme = () => {
     setUseCustom(false);
 
     // Send Message To ContentScript to manipulate page
-    await chrome.tabs?.query({}, (tabs) => {
-      tabs.forEach((tab) => {
-        console.log('changing the theme');
-
-        chrome.tabs.sendMessage(tab.id, {
-          theme: themeName,
-          message: 'changeTheme',
-        });
-      });
+    messageToContentScript({
+      theme: themeName,
+      message: 'changeTheme',
     });
 
     // Send message to bg.js to save data
-    await chrome.runtime?.sendMessage({
+    messageToBackground({
       message: 'saveTheme',
       theme: themeName,
     });
 
     // Disable Custom Theme
-    await chrome.tabs?.query({}, (tabs) => {
-      tabs.forEach((tab) => {
-        chrome.tabs.sendMessage(tab.id, {
-          message: 'toggleCustomTheme',
-          useCustomTheme: false,
-        });
-      });
+    messageToContentScript({
+      message: 'toggleCustomTheme',
+      useCustomTheme: false,
     });
 
     // Save Custom Theme Status
-    await chrome.runtime?.sendMessage({
+    messageToBackground({
       message: 'toggleCustomTheme',
       useCustomTheme: false,
     });
@@ -100,30 +93,22 @@ const useTheme = () => {
 
     if(!currentUseCustom) {
       // If user toggle useCustom to false use active preset
-      await chrome.tabs?.query({}, (tabs) => {
-        tabs.forEach((tab) => {
-          chrome.tabs.sendMessage(tab.id, {
-            message: 'changeTheme',
-            theme: name,
-          });
-        });
+      messageToContentScript({
+        message: 'changeTheme',
+        theme: name,
       });
     }
 
     // If user toggle useCustom to true use custom theme
     // Call content script to change theme
-    await chrome.tabs?.query({}, (tabs) => {
-      tabs.forEach((tab) => {
-        chrome.tabs.sendMessage(tab.id, {
-          message: 'toggleCustomTheme',
-          useCustomTheme: currentUseCustom,
-        });
-      });
+    messageToContentScript({
+      message: 'toggleCustomTheme',
+      useCustomTheme: currentUseCustom,
     });
 
     // Save value to bg.js
     // Send message to bg.js to save data
-    await chrome.runtime?.sendMessage({
+    messageToBackground({
       message: 'toggleCustomTheme',
       useCustomTheme: currentUseCustom,
     });
@@ -139,18 +124,14 @@ const useTheme = () => {
     });
 
     // Call content script to manipulate page
-    await chrome.tabs?.query({}, (tabs) => {
-      tabs.forEach((tab) => {
-        chrome.tabs.sendMessage(tab.id, {
-          message: 'changeCustomColor',
-          propertyName,
-          value,
-        });
-      });
+    messageToContentScript({
+      message: 'changeCustomColor',
+      propertyName,
+      value,
     });
 
     // Call bg.js to save props
-    await chrome.runtime?.sendMessage({
+    messageToBackground({
       message: 'saveCustomColors',
       propertyName,
       value,
@@ -166,21 +147,15 @@ const useTheme = () => {
     setCustomColors(colors);
 
     // Save to background
-    await chrome.runtime?.sendMessage({
+    messageToBackground({
       message: 'loadPreset',
       theme: name,
     });
 
     // Call Content Script
-    await chrome.tabs?.query({}, (tabs) => {
-      tabs.forEach((tab) => {
-        console.log('changing the theme');
-
-        chrome.tabs.sendMessage(tab.id, {
-          theme: name,
-          message: 'changeTheme',
-        });
-      });
+    messageToContentScript({
+      theme: name,
+      message: 'changeTheme',
     });
   };
 

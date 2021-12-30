@@ -18,6 +18,11 @@ const getValueInStore = (key) => {
   });
 };
 
+const setValueInStore = async (values, callback) => {
+  await chrome.storage.local.set(values)
+    .then(() => callback && callback());
+};
+
 const initTheme = async () => {
   const { activeTheme } = await getValueInStore('activeTheme');
   const { isCustomTheme } = await getValueInStore('isCustomTheme');
@@ -26,34 +31,23 @@ const initTheme = async () => {
   // If first launch set theme to default theme
   if(!activeTheme) {
     const defaultTheme = DEFAULT_THEME;
-    await chrome.storage.local.set(
-      {
-        activeTheme: defaultTheme,
-      }, () => {
-        console.log('cyberspace is choosed as default theme');
-      },
-    );
+
+    setValueInStore({
+      activeTheme: defaultTheme,
+    }, () => console.log('cyberspace is choosed as default theme'));
   }
 
   // If first launch set isCustomTheme to false
   if(!isCustomTheme) {
-    await chrome.storage.local.set(
-      {
-        isCustomTheme: false,
-      }, () => {
-        console.log('Custom value is set to false');
-      },
-    );
+    setValueInStore({
+      isCustomTheme: false,
+    }, () => console.log('Custom value is set to false'));
   }
 
   if(!customTheme) {
-    await chrome.storage.local.set(
-      {
-        customTheme: DEFAULT_CUSTOM_THEME,
-      }, () => {
-        console.log('Custom value colors is set to default');
-      },
-    );
+    setValueInStore({
+      customTheme: DEFAULT_CUSTOM_THEME,
+    }, () => console.log('Custom value colors is set to default'));
   }
 };
 
@@ -72,21 +66,21 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   }
 
   if(message === 'saveTheme') {
-    chrome.storage.local.set({ activeTheme: theme }, () => {
-      console.log('theme is updated');
-    });
+    setValueInStore({
+      activeTheme: theme,
+    }, () => console.log('theme is updated'));
   }
 
   if(message === 'useCustomTheme') {
-    chrome.storage.local.set({ isCustomTheme: true }, () => {
-      console.log('custom theme is used');
-    });
+    setValueInStore({
+      isCustomTheme: true,
+    }, () => console.log('custom theme is used'));
   }
 
   if(message === 'toggleCustomTheme') {
-    chrome.storage.local.set({ isCustomTheme: useCustomTheme }, () => {
-      console.log('toggle custom theme');
-    });
+    setValueInStore({
+      isCustomTheme: useCustomTheme,
+    }, () => console.log('toggle custom theme'));
   }
 
   if(message === 'saveCustomColors') {
@@ -102,7 +96,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         [propertyName]: value,
       };
 
-      chrome.storage.local.set({
+      setValueInStore({
         customTheme: newThemeColors,
       });
     };
@@ -117,10 +111,9 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       if(!isCustomTheme) return;
 
       const themeIndex = themes.map((i) => i.name).indexOf(theme);
-
       const newCustomValues = themes[themeIndex];
 
-      chrome.storage.local.set({
+      setValueInStore({
         customTheme: newCustomValues,
       });
     };
