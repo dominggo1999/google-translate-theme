@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable array-callback-return */
 
 const extensionStorage = chrome ? chrome.storage.local : browser.storage.local;
@@ -29,12 +30,20 @@ const property = {
   textColor: '--text-color',
 };
 
-const changeCSSVariables = (colors) => {
-  const r = document.querySelector(':root');
+const root = document.querySelector(':root');
 
+// Sprite color is the icon to display input type (right beside total char count)
+const changeSpriteColor = (color) => {
+  const formattedHex = color.split('#')[1];
+  const filter = generateFilter(formattedHex);
+  root.style.setProperty('--color-filter', filter);
+};
+
+const changeCSSVariables = (colors) => {
   Object.keys(colors).map((name) => {
-    r.style.setProperty(property[name], colors[name]);
+    root.style.setProperty(property[name], colors[name]);
   });
+  changeSpriteColor(colors.mainColor);
 };
 
 const applyTheme = async () => {
