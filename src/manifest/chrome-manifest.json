@@ -14,6 +14,7 @@
         "https://translate.google.com/*"
       ],
       "js": [
+        "themes-2.js",
         "colorize-filter.js",
         "content-scripts.js"
       ],
@@ -44,7 +45,7 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "themes.json"
+        "themes.js"
       ],
       "matches": [
         "<all_urls>"

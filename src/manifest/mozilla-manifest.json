@@ -13,6 +13,7 @@
         "https://translate.google.com/*"
       ],
       "js": [
+        "themes-2.js",
         "colorize-filter.js",
         "content-scripts.js"
       ],
@@ -42,6 +43,6 @@
     "unlimitedStorage"
   ],
   "web_accessible_resources": [
-    "themes.json"
+    "themes.js"
   ]
 }

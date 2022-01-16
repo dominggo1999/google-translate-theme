@@ -1,3 +1,12 @@
+/* :root {
+    --bg-color: #091f2c;
+    --main-color: #f5b1cc;
+    --sub-color: #93e8d3;
+    --text-color: #a288d9;
+    --color-filter: invert(95%) sepia(98%) saturate(1814%) hue-rotate(227deg) brightness(106%) contrast(92%);
+} */
+
+
 /* Sprite Image */
 #yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.OlSOob > c-wiz > div.ccvoYb > div.AxqVh > div.OPPzxe > c-wiz.rm1UF.UnxENd > div.FFpbKc > div.nidPne{
     filter : var(--color-filter)!important;
@@ -6,8 +15,6 @@
 #ow89 > div > span > div > div > span > div > a.ita-kd-selected span{
     opacity: 1!important;
 }
-
-
 
 
 /* Header */

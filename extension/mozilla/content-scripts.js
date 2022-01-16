@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable no-undef */
 /* eslint-disable array-callback-return */
 
@@ -9,16 +10,6 @@ const getValueInStore = (key) => {
   return new Promise((resolve, reject) => {
     extensionStorage.get([key], (result) => {
       resolve(result);
-    });
-  });
-};
-
-const getAllThemes = () => {
-  return new Promise((resolve, reject) => {
-    runtime.sendMessage({
-      message: 'getAllTheme',
-    }, (res) => {
-      resolve(res);
     });
   });
 };
@@ -46,45 +37,35 @@ const changeCSSVariables = (colors) => {
   changeSpriteColor(colors.mainColor);
 };
 
-const applyTheme = async () => {
-  const { activeTheme } = await getValueInStore('activeTheme');
-  const { isCustomTheme } = await getValueInStore('isCustomTheme');
-  const { customTheme } = await getValueInStore('customTheme');
+const createStylesheet = (colors) => {
+  const formattedHex = (colors.mainColor).split('#')[1];
 
-  if(!isCustomTheme) {
-    getAllThemes()
-      .then((res) => {
-        const { themes } = res;
-        const themeIndex = themes.map((i) => i.name).indexOf(activeTheme);
+  const cssVariables = `
+    :root{
+      --bg-color: ${colors.bgColor};
+      --main-color: ${colors.mainColor};
+      --sub-color: ${colors.subColor};
+      --text-color:${colors.textColor};
+      --color-filter: ${generateFilter(formattedHex)};
+  }`;
 
-        const { name, ...colors } = themes[themeIndex];
-
-        changeCSSVariables(colors);
-      });
-  }else {
-    // Change display theme to custom color if user want to use custom theme
-    const { name, ...colors } = customTheme;
-
-    changeCSSVariables(colors);
-  }
+  const style = document.createElement('style');
+  const head = document.querySelector('head');
+  style.type = 'text/css';
+  style.appendChild(document.createTextNode(cssVariables));
+  head.appendChild(style);
 };
-
-applyTheme();
 
 // Listen for call from popup or option
 runtime.onMessage.addListener((request) => {
   const { theme: themeName, message, useCustomTheme } = request;
 
   if(message === 'changeTheme') {
-    getAllThemes()
-      .then((res) => {
-        const { themes } = res;
-        const themeIndex = themes.map((i) => i.name).indexOf(themeName);
+    const themeIndex = themes.map((i) => i.name).indexOf(themeName);
 
-        const { name, ...colors } = themes[themeIndex];
+    const { name, ...colors } = themes[themeIndex];
 
-        changeCSSVariables(colors);
-      });
+    changeCSSVariables(colors);
   }
 
   if(message === 'toggleCustomTheme') {
@@ -113,5 +94,26 @@ runtime.onMessage.addListener((request) => {
           [propertyName]: value,
         });
       });
+  }
+});
+
+extensionStorage.get(['isCustomTheme', 'customTheme', 'activeTheme'], (results) => {
+  const {
+    isCustomTheme,
+    customTheme,
+    activeTheme,
+  } = results;
+
+  if(!isCustomTheme) {
+    const themeIndex = themes.map((i) => i.name).indexOf(activeTheme);
+
+    const { name, ...colors } = themes[themeIndex];
+
+    createStylesheet(colors);
+  }else {
+    // Change display theme to custom color if user want to use custom theme
+    const { name, ...colors } = customTheme;
+
+    createStylesheet(colors);
   }
 });
