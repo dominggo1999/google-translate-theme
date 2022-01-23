@@ -40,7 +40,9 @@
     "tabs",
     "storage",
     "activeTab",
-    "unlimitedStorage"
+    "unlimitedStorage",
+    "webRequest",
+    "webRequestBlocking"
   ],
   "web_accessible_resources": [
     "themes.js"

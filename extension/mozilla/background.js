@@ -125,3 +125,10 @@ runtime.onMessage.addListener((request, sender, sendResponse) => {
     changeCustomTheme();
   }
 });
+
+browser?.webRequest.onBeforeRequest.addListener((d) => {
+  return { cancel: true };
+}, {
+  urls: ['https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg'],
+},
+['blocking']);

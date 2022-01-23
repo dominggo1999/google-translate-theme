@@ -270,23 +270,26 @@ span[jsname="bN97Pc"]{
 
 #kvLWu > li > div.uNr6ee{
     color : var(--text-color)!important;    
+    font-weight: 500;   
 } 
 
 #kvLWu > li > div.xUPQqb{
-    color : var(--sub-color)!important;    
+    color : var(--sub-color)!important;     
+    font-weight: 500;   
+    opacity: 0.7;
 }
 
 /* Translation Reccomendation Selected */
 #kvLWu > li[aria-selected="true"]{
-    background : var(--sub-color)!important; 
+    background : var(--main-color)!important; 
 }
 
 #kvLWu > li[aria-selected="true"] > div.uNr6ee{
-    color : var(--bg-color)!important;    
+    color : var(--bg-color)!important; 
 } 
 
 #kvLWu > li[aria-selected="true"] > div.xUPQqb{
-    color : var(--text-color)!important;    
+    color : var(--bg-color)!important;
 }
 
 
