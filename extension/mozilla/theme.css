@@ -794,8 +794,23 @@ textarea{
 }
 
 /* Google Translate Logo Text */
-#sdgBod > span.gb_Wd.gb_Tc{
+.gb_Uc .gb_Wd, .gb_Kc .gb_Wd{
     color : var(--main-color)!important;
+}
+
+@keyframes fadeIn {
+   0% {opacity: 0;}
+   100% {opacity: 1;}
+} 
+
+#sdgBod > span.gb_rc.gb_9d{
+    animation : fadeIn 4000ms;    
+    filter :invert(92%) sepia(9%) saturate(326%) hue-rotate(263deg) brightness(98%) contrast(90%);;
+}
+
+/*Google Translate Logo Image SVG */
+#sdgBod > span.gb_rc.gb_9d::before{
+    content: url("https://res.cloudinary.com/dnvq18xxf/image/upload/v1642923506/google-logo_r22ktk.svg");
 }
 
 

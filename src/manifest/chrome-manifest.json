@@ -40,7 +40,8 @@
     "tabs",
     "storage",
     "activeTab",
-    "unlimitedStorage"
+    "unlimitedStorage",
+    "declarativeNetRequest"
   ],
   "web_accessible_resources": [
     {

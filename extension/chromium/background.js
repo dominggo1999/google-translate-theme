@@ -125,3 +125,15 @@ runtime.onMessage.addListener((request, sender, sendResponse) => {
     changeCustomTheme();
   }
 });
+
+chrome?.declarativeNetRequest.updateDynamicRules({
+  addRules: [
+    {
+      id: 1,
+      priority: 1,
+      action: { type: 'block' },
+      condition: { urlFilter: 'https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg', resourceTypes: ['image'] },
+    },
+  ],
+  removeRuleIds: [1],
+});
