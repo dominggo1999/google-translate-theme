@@ -558,31 +558,41 @@ input.yFQBKb::placeholder {
     background-color : var(--bg-color)!important;  
 }
 
-/* languge name */
-.Llmcnf{
-    color : var(--text-color)!important;  
-}
-
 /* detect language */
 .qSb8Pe.KKjvXb{
     background-color : var(--main-color)!important;  
 }
 
-.qSb8Pe.KKjvXb:hover Llmcnf,
-.qSb8Pe.KKjvXb:focus Llmcnf{
+.qSb8Pe.KKjvXb .Llmcnf,
+.qSb8Pe.KKjvXb:hover .Llmcnf,
+.qSb8Pe.KKjvXb:focus .Llmcnf{
+    color : var(--bg-color)!important;  
+}
+
+
+/* languge name */
+.Llmcnf{
+    color : var(--text-color)!important;  
+}
+
+.qSb8Pe.RCaXn.KKjvXb:hover .Llmcnf,
+.qSb8Pe.RCaXn.KKjvXb:focus .Llmcnf{
     color: var(--text-color)!important;
 }
 
 /* icon */
-.qSb8Pe i, .qSb8Pe svg {
+.qSb8Pe .material-icons-extended.VfPpkd-kBDsod  {
     color : var(--sub-color)!important;  
+}
+
+.qSb8Pe:hover .material-icons-extended.VfPpkd-kBDsod  {
+    color : var(--bg-color)!important;  
 }
 
 /* Hover */
 .qSb8Pe:hover {
     background-color : var(--main-color)!important;  
 }
-
 
 /* selected language */
 .qSb8Pe.RCaXn.KKjvXb {
