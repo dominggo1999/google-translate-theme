@@ -1,5 +1,7 @@
 const fs = require('fs');
 const { resolve } = require('path');
+const minify = require('@node-minify/core');
+const cleanCSS = require('@node-minify/clean-css');
 
 const r = (path) => resolve(__dirname, path);
 const vendor = process.env.VENDOR;
@@ -24,7 +26,15 @@ fs.copyFile(themeObject, targetDirObject, (err) => {
   console.log('Theme Object file copied');
 });
 
-fs.copyFile(themeStyleSheet, targetDirStyleSheet, (err) => {
-  if (err) throw err;
-  console.log('Theme StyleSheet file copied');
+minify({
+  compressor: cleanCSS,
+  input: themeStyleSheet,
+  output: targetDirStyleSheet,
+  callback: (err, min) => {
+    if (err) {
+      console.log(err);
+    }else{
+      console.log('Theme StyleSheet succesfully created');
+    }
+  },
 });
