@@ -563,6 +563,16 @@ input.yFQBKb::placeholder {
     color : var(--text-color)!important;  
 }
 
+/* detect language */
+.qSb8Pe.KKjvXb{
+    background-color : var(--main-color)!important;  
+}
+
+.qSb8Pe.KKjvXb:hover Llmcnf,
+.qSb8Pe.KKjvXb:focus Llmcnf{
+    color: var(--text-color)!important;
+}
+
 /* icon */
 .qSb8Pe i, .qSb8Pe svg {
     color : var(--sub-color)!important;  
@@ -573,9 +583,6 @@ input.yFQBKb::placeholder {
     background-color : var(--main-color)!important;  
 }
 
-.qSb8Pe:hover .Llmcnf {
-    color : var(--bg-color)!important; 
-}
 
 /* selected language */
 .qSb8Pe.RCaXn.KKjvXb {
@@ -591,10 +598,15 @@ input.yFQBKb::placeholder {
     background-color : var(--main-color)!important;  
 }
 
-.qSb8Pe:focus .Llmcnf {
-    color : var(--sub-color)!important;  
+.qSb8Pe:focus .Llmcnf,
+.qSb8Pe:hover .Llmcnf {
+    color : var(--bg-color)!important;  
 }
 
+@media screen and (min-width: 720px){
+.qSb8Pe:focus {
+    border: none;
+}
 
 /* Saved words */
 ol.WMHbxd , c-wiz.uojYg.Jf2lJc.i6oIBe.fTtg4e , .uojYg {
@@ -792,7 +804,7 @@ a.SdtK5b{
 }
 
 /* Caret Color */
-textarea{
+textarea, .fMHXgc.qkH7ie > input{
     caret-color : var(--main-color)!important;
 }
 
@@ -809,8 +821,3 @@ textarea{
 #sdgBod > span.gb_rc.gb_9d::before{
     content: url("https://res.cloudinary.com/dnvq18xxf/image/upload/v1642923506/google-logo_r22ktk.svg");
 }
-
-
-
-
-
