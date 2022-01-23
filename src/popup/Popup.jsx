@@ -9,28 +9,32 @@ import Custom from './Custom';
 import ThemeName from './ThemeName';
 
 const Popup = () => {
-  const [activeTab, setActiveTab] = useState(1);
+  const [activeTab, setActiveTab] = useState(0);
   const props = useTheme();
   const {
     theme,
     name,
-    changeTheme,
     useCustom,
     customColors,
+    changeTheme,
   } = props;
+  const { list, filterTheme, resetThemes } = useFilterTheme();
 
   const popupColor = (prop) => {
     return useCustom ? customColors[prop] : theme[prop];
   };
 
-  const { list, filterTheme } = useFilterTheme();
+  const handleTabChange = (index) => {
+    setActiveTab(index);
+    resetThemes();
+  };
 
   if(!theme) return <PopupWrapper />;
 
   return (
     <PopupWrapper>
       <Tabs
-        onSelect={(index) => setActiveTab(index)}
+        onSelect={handleTabChange}
         defaultIndex={activeTab}
       >
         {/* Tab Navigation */}

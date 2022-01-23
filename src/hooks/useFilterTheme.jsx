@@ -1,20 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { themes } from '../themes';
 
 const useFilterTheme = () => {
   const [list, setList] = useState(themes);
 
   const filterTheme = (e) => {
-    const s = e.target.value;
+    const search = e.target.value.toLowerCase();
 
     const filtered = themes.filter((i) => {
-      return i.name.indexOf(s) === 0;
+      const preset = i.name.split('_').join(' ').toLowerCase();
+
+      return preset.indexOf(search) === 0;
     });
 
     setList(filtered);
   };
 
-  return { list, filterTheme };
+  const resetThemes = () => {
+    setList(themes);
+  };
+
+  return { list, filterTheme, resetThemes };
 };
 
 export default useFilterTheme;

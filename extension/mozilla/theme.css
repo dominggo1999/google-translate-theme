@@ -7,6 +7,10 @@
     opacity: 1!important;
 }
 
+body{
+    background : var(--bg-color)!important;
+}
+
 /* Header */
 #gb {
     background-color : var(--bg-color)!important;
