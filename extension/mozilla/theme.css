@@ -788,6 +788,15 @@ a.SdtK5b{
     border-color: var(--main-color)!important; 
 }
 
+/* Caret Color */
+textarea{
+    caret-color : var(--main-color)!important;
+}
+
+/* Google Translate Logo Text */
+#sdgBod > span.gb_Wd.gb_Tc{
+    color : var(--main-color)!important;
+}
 
 
 

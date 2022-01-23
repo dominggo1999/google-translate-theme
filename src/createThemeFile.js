@@ -4,18 +4,27 @@ const { resolve } = require('path');
 const r = (path) => resolve(__dirname, path);
 const vendor = process.env.VENDOR;
 
-const srcDir = r('./themes.js');
+const themeObject = r('./themes.js');
+const themeStyleSheet = r('./theme.css');
 
-let targetDir;
+let targetDirObject;
+let targetDirStyleSheet;
 if(vendor === 'chromium') {
-  targetDir = r('../extension/chromium/themes.js');
+  targetDirObject = r('../extension/chromium/themes.js');
+  targetDirStyleSheet = r('../extension/chromium/theme.css');
 }
 
 if(vendor === 'mozilla') {
-  targetDir = r('../extension/mozilla/themes.js');
+  targetDirObject = r('../extension/mozilla/themes.js');
+  targetDirStyleSheet = r('../extension/mozilla/theme.css');
 }
 
-fs.copyFile(srcDir, targetDir, (err) => {
+fs.copyFile(themeObject, targetDirObject, (err) => {
   if (err) throw err;
-  console.log('Theme file copied to dist');
+  console.log('Theme Object file copied');
+});
+
+fs.copyFile(themeStyleSheet, targetDirStyleSheet, (err) => {
+  if (err) throw err;
+  console.log('Theme StyleSheet file copied');
 });
