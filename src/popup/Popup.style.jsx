@@ -294,3 +294,11 @@ export const ToggleButton = styled.button`
     text-2xl
   `}
 `;
+
+export const NoResult = styled.div`
+  ${tw`
+    text-center 
+    text-lg 
+    font-semibold 
+  `}
+`;

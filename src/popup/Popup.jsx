@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  PopupWrapper, Tab, Tabs, TabList, TabPanel, ThemeList, ThemeButton, SearchField,
+  PopupWrapper, Tab, Tabs, TabList, TabPanel, ThemeList, ThemeButton, SearchField, NoResult,
 } from './Popup.style';
 import useTheme from '../hooks/useTheme';
 import { formatName } from '../util';
@@ -82,7 +82,7 @@ const Popup = () => {
               );
             })}
             {list && !list.length && (
-              <p>No Result</p>
+              <NoResult>No Result</NoResult>
             )}
           </ThemeList>
         </TabPanel>
