@@ -1,6 +1,8 @@
 const fs = require('fs');
 const { resolve } = require('path');
 
+const { supportedDomain } = require('./supportedDomain.json');
+
 const vendor = process.env.VENDOR;
 const chromeManifest = require('./manifest/chrome-manifest.json');
 const mozillaManifest = require('./manifest/mozilla-manifest.json');
@@ -20,6 +22,7 @@ if(vendor === 'mozilla') {
 }
 
 const writeManifest = async () => {
+  manifest.content_scripts[0].matches = supportedDomain;
   const json = JSON.stringify(manifest);
 
   fs.writeFile(targetDir, json, () => {

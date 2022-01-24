@@ -10,9 +10,6 @@
   },
   "content_scripts": [
     {
-      "matches": [
-        "https://translate.google.com/*"
-      ],
       "js": [
         "themes-2.js",
         "colorize-filter.js",
