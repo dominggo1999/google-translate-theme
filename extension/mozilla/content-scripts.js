@@ -117,12 +117,3 @@ extensionStorage.get(['isCustomTheme', 'customTheme', 'activeTheme'], (results) 
     createStylesheet(colors);
   }
 });
-
-const elementExist = setInterval(() => {
-  const elm = document.querySelector('head');
-  if (elm != null) {
-    console.log('hewllow');
-    // call your function here to do something
-    clearInterval(elementExist);
-  }
-}, 100);
