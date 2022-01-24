@@ -1,3 +1,11 @@
+:root {
+    --bg-color: #4c1c26;
+    --main-color: #c356b6;
+    --sub-color: #326984;
+    --text-color: #e4edf1;
+    --color-filter: invert(80%) sepia(14%) saturate(1257%) hue-rotate(122deg) brightness(83%) contrast(92%);
+}
+
 /* Sprite Image */
 #yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.OlSOob > c-wiz > div.ccvoYb > div.AxqVh > div.OPPzxe > c-wiz.rm1UF.UnxENd > div.FFpbKc > div.nidPne{
     filter : var(--color-filter)!important;
@@ -184,6 +192,14 @@ span[jsname="bN97Pc"]{
 /* Gradient */
 .akczyd > .X4DQ0::after {
     background: linear-gradient(to right,rgba(15, 15, 15, 0),rgba(43, 43, 43, .08))!important;
+}
+
+/* Round Border */
+@media screen and (min-width: 1280px){
+    .zXU7Rb {
+        border-top-left-radius: 0 !important; 
+        border-top-right-radius: 0 !important;
+    }
 }
 
 /* Document mode */
@@ -614,8 +630,9 @@ input.yFQBKb::placeholder {
 }
 
 @media screen and (min-width: 720px){
-.qSb8Pe:focus {
-    border: none;
+    .qSb8Pe:focus {
+        border: none;
+    }
 }
 
 /* Saved words */
@@ -830,4 +847,51 @@ textarea, .fMHXgc.qkH7ie > input{
 /*Google Translate Logo Image SVG */
 #sdgBod > span.gb_rc.gb_9d::before{
     content: url("https://res.cloudinary.com/dnvq18xxf/image/upload/v1642923506/google-logo_r22ktk.svg");
+}
+
+/* Document */
+/* Background */
+.RiZzuc{
+    background : var(--bg-color)!important;
+}
+
+/* Document Info Area */
+.RiZzuc > div.sUGHdf.RT8wk {
+    background : var(--main-color)!important;
+}
+
+
+/* Document Logo */
+#yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.R5HjH > c-wiz > div.oLbzv > c-wiz > div > div > form > div.RiZzuc > div.sUGHdf.RT8wk > div.cDGEmc > i{
+    color:var(--bg-color) !important;
+}
+
+/* Document Title */
+.MXuJQd, .d3Mtee{
+    color:var(--bg-color) !important;
+}
+
+/* Document size */
+.d3Mtee{
+    opacity : 0.7;
+}
+
+/* Button */
+#yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.R5HjH > c-wiz > div.oLbzv > c-wiz > div > div > form > div.RiZzuc > div.ld4Jde > div > button > div.VfPpkd-Jh9lGc{
+    background:var(--main-color) !important;
+}
+
+/* Button Text */
+#yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.R5HjH > c-wiz > div.oLbzv > c-wiz > div > div > form > div.RiZzuc > div.ld4Jde > div > button > span{
+    color:var(--bg-color) !important;
+}
+
+/* Document when loading */
+.krCv8c{
+    background:var(--bg-color) !important;
+    color:var(--text-color) !important;
+}
+
+.krCv8c .IoZsuc{
+    color:var(--text-color) !important;
 }
