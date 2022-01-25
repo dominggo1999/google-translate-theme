@@ -194,6 +194,13 @@ span[jsname="bN97Pc"]{
     }
 }
 
+@media screen and (min-width: 1280px){
+    .bvzp8c {
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+    }
+}
+
 /* Document mode */
 /* Document area*/
 .JqKQbd {
