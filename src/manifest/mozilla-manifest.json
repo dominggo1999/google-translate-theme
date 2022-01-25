@@ -12,7 +12,8 @@
       "js": [
         "themes-2.js",
         "colorize-filter.js",
-        "content-scripts.js"
+        "content-scripts.js",
+        "key-bindings.js"
       ],
       "css": [
         "theme.css"
