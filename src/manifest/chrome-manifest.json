@@ -11,6 +11,7 @@
   "content_scripts": [
     {
       "js": [
+        "key-bindings.js",
         "themes-2.js",
         "colorize-filter.js",
         "content-scripts.js"

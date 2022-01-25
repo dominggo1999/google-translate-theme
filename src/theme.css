@@ -1,3 +1,11 @@
+:root {
+    --bg-color: #0c0d11;
+    --main-color: #7ebab5;
+    --sub-color: #808080;
+    --text-color: #f6f5f5;
+    --color-filter: invert(98%) sepia(7%) saturate(1855%) hue-rotate(97deg) brightness(76%) contrast(90%);
+}
+
 /* Sprite Image */
 #yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.OlSOob > c-wiz > div.ccvoYb > div.AxqVh > div.OPPzxe > c-wiz.rm1UF.UnxENd > div.FFpbKc > div.nidPne{
     filter : var(--color-filter)!important;
@@ -379,6 +387,11 @@ span[jsname="bN97Pc"]{
 /* Microphone Icon */
 #ow85 > div > span > button > span:nth-child(3), #ow3388 > div > span > button > span:nth-child(3)  {
     color : var(--sub-color)!important;  
+}
+
+/* Microphone Icon On Reading*/
+#ow85 > div > span > button > span.material-icons-extended.VfPpkd-Bz112c-kBDsod-OWXEXe-IT5dJd.VfPpkd-Bz112c-kBDsod {
+    color : var(--main-color)!important;  
 }
 
 /* Input Tool Logo */

@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Google Translate Theme",
-  "version": "1.0",
+  "version": "1.0.2",
   "description": "Change And Customize Google Translate Color Theme",
   "icons": {
     "16": "./assets/icon-512.png",
