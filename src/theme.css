@@ -46,7 +46,8 @@ body{
 
 
 /* Sign In Button*/
-#gb div.gb_Ke > a {
+
+#gb > div.gb_Ed.gb_Vd.gb_Ld.gb_Kd > div.gb_Pd.gb_Ra.gb_Dd > div > a {
     background-color : var(--main-color)!important; 
     color :  var(--bg-color)!important;
 }
@@ -840,16 +841,16 @@ textarea, .fMHXgc.qkH7ie > input{
 }
 
 /* Google Translate Logo Text */
-.gb_Uc .gb_Wd, .gb_Kc .gb_Wd{
+#gb > div.gb_Ed.gb_Vd.gb_Ld.gb_Kd > div.gb_Dd.gb_Vc.gb_Wc > div.gb_mc div a span{
     color : var(--main-color)!important;
 } 
 
-#sdgBod > span.gb_rc.gb_9d{
+#gb > div.gb_Ed.gb_Vd.gb_Ld.gb_Kd > div.gb_Dd.gb_Vc.gb_Wc > div.gb_mc div a span:nth-child(1){
     filter :var(--color-filter);
 }
 
 /*Google Translate Logo Image SVG */
-#sdgBod > span.gb_rc.gb_9d::before{
+#gb > div.gb_Ed.gb_Vd.gb_Ld.gb_Kd > div.gb_Dd.gb_Vc.gb_Wc > div.gb_mc div a span:nth-child(1)::before{
     content: url("https://res.cloudinary.com/dnvq18xxf/image/upload/v1642923506/google-logo_r22ktk.svg");
 }
 
