@@ -12,14 +12,14 @@ window.addEventListener('load', () => {
       inputArea && inputArea.focus();
     }
 
-    if(key === 'm' && e.ctrlKey) {
+    if(key === ',' && e.ctrlKey) {
       ttsSource && ttsSource.click();
       setTimeout(() => {
         inputArea.focus();
       }, 500);
     }
 
-    if(key === ',' && e.ctrlKey) {
+    if(key === '.' && e.ctrlKey) {
       ttsTarget && ttsTarget.click();
       setTimeout(() => {
         inputArea.focus();
