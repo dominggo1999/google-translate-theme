@@ -1,4 +1,3 @@
-/* Sprite Image */
 #yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.OlSOob > c-wiz > div.ccvoYb > div.AxqVh > div.OPPzxe > c-wiz.rm1UF.UnxENd > div.FFpbKc > div.nidPne{
     filter : var(--color-filter)!important;
 }
@@ -46,8 +45,7 @@ body{
 
 
 /* Sign In Button*/
-
-#gb > div.gb_Ed.gb_Vd.gb_Ld.gb_Kd > div.gb_Pd.gb_Ra.gb_Dd > div > a {
+#gb div.gb_Pe > a {
     background-color : var(--main-color)!important; 
     color :  var(--bg-color)!important;
 }
@@ -841,16 +839,16 @@ textarea, .fMHXgc.qkH7ie > input{
 }
 
 /* Google Translate Logo Text */
-#gb > div.gb_Ed.gb_Vd.gb_Ld.gb_Kd > div.gb_Dd.gb_Vc.gb_Wc > div.gb_mc div a span{
+#sdgBod > span.gb_2d.gb_Zc{
     color : var(--main-color)!important;
 } 
 
-#gb > div.gb_Ed.gb_Vd.gb_Ld.gb_Kd > div.gb_Dd.gb_Vc.gb_Wc > div.gb_mc div a span:nth-child(1){
+#sdgBod > span.gb_wc.gb_ee{
     filter :var(--color-filter);
 }
 
 /*Google Translate Logo Image SVG */
-#gb > div.gb_Ed.gb_Vd.gb_Ld.gb_Kd > div.gb_Dd.gb_Vc.gb_Wc > div.gb_mc div a span:nth-child(1)::before{
+#sdgBod > span.gb_wc.gb_ee::before{
     content: url("https://res.cloudinary.com/dnvq18xxf/image/upload/v1642923506/google-logo_r22ktk.svg");
 }
 
