@@ -21,6 +21,13 @@
       ],
       "all_frames": true,
       "run_at": "document_start"
+    },
+    {
+      "js" : [
+        "inject-iframe.js"
+      ],
+      "all_frames": true,
+      "run_at": "document_idle"
     }
   ],
   "background": {
@@ -39,11 +46,14 @@
     "storage",
     "activeTab",
     "unlimitedStorage",
-    "declarativeNetRequest"
+    "declarativeNetRequest",
+    "scripting",
+    "webNavigation"
   ],
   "web_accessible_resources": [
     {
       "resources": [
+        "theme.css",
         "themes.js"
       ],
       "matches": [

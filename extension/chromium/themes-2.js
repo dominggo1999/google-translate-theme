@@ -1,4 +1,5 @@
-const themes = [{
+// eslint-disable-next-line no-var
+var themes = [{
   name: '8008', bgColor: '#333a45', mainColor: '#f44c7f', subColor: '#939eae', textColor: '#e9ecf0',
 },
 {

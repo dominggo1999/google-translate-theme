@@ -22,7 +22,10 @@ if(vendor === 'mozilla') {
 }
 
 const writeManifest = async () => {
-  manifest.content_scripts[0].matches = supportedDomain;
+  manifest.content_scripts.forEach((i) => {
+    i.matches = supportedDomain;
+  });
+
   const json = JSON.stringify(manifest);
 
   fs.writeFile(targetDir, json, () => {

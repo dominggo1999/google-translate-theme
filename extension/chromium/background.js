@@ -124,6 +124,57 @@ runtime.onMessage.addListener((request, sender, sendResponse) => {
 
     changeCustomTheme();
   }
+
+  if(message === 'inject css to iframe') {
+    const tabId = sender.tab.id;
+    const contentScripts = chrome.runtime.getManifest().content_scripts;
+
+    const css = contentScripts[0].css;
+
+    const getAllFrames = async () => {
+      const allFrames = await chrome.webNavigation.getAllFrames(
+        {
+          tabId,
+        },
+      );
+
+      const target = allFrames.filter((f) => {
+        return f.url.match('https://ogs.google.com/')?.length;
+      })[0];
+
+      if(!target) {
+        setTimeout(async () => {
+          getAllFrames();
+        }, 200);
+
+        return;
+      }
+
+      const frameId = target.frameId;
+
+      chrome.scripting.insertCSS(
+        {
+          target: {
+            frameIds: [frameId],
+            tabId,
+          },
+          files: css,
+        },
+      );
+
+      chrome.scripting.executeScript(
+        {
+          target: {
+            frameIds: [frameId],
+            tabId,
+          },
+          files: contentScripts[0].js,
+        },
+      );
+    };
+
+    getAllFrames();
+  }
 });
 
 chrome?.declarativeNetRequest.updateDynamicRules({
