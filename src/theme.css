@@ -68,11 +68,24 @@ body{
 }
 
 /* Sidebar */
-#gb > div.gb_1d > div {
+header div[role="navigation"]{
     background-color : var(--bg-color)!important;
-    color : var(--text-color)!important;
+    color : var(--main-color)!important;
+}
+ 
+/* Sidebar header */
+header div[role="navigation"] span.gb_2d.gb_Zc{
+    color : var(--main-color)!important;
+} 
+
+/* Sidebar header "google" text*/
+header div[role="navigation"] span.gb_wc.gb_ee{
+    filter :var(--color-filter);
 }
 
+header div[role="navigation"] span.gb_wc.gb_ee::before{
+    content: url("https://res.cloudinary.com/dnvq18xxf/image/upload/v1642923506/google-logo_r22ktk.svg");
+}
 
 /* Parent  */
 #yDmH0d > c-wiz {
@@ -304,6 +317,10 @@ span[jsname="bN97Pc"]{
 
 #kvLWu > li[aria-selected="true"] > div.xUPQqb{
     color : var(--bg-color)!important;
+}
+
+#kvLWu .Bcbxbe{
+    border-bottom:none;
 }
 
 
@@ -832,6 +849,10 @@ a.SdtK5b{
 .xu46lf > div{
     border-color: var(--main-color)!important; 
 }
+.xuhO7c {
+    border-color: var(--main-color)!important; 
+}
+
 
 /* Caret Color */
 textarea, .fMHXgc.qkH7ie > input{
@@ -839,7 +860,8 @@ textarea, .fMHXgc.qkH7ie > input{
 }
 
 /* Google Translate Logo Text */
-#sdgBod > span.gb_2d.gb_Zc{
+
+#sdgBod, #sdgBod > .gb_na svg, .gb_Dc svg, .gb_0c .gb_2d, .gb_Pc .gb_2d {
     color : var(--main-color)!important;
 } 
 
