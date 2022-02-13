@@ -124,8 +124,56 @@ runtime.onMessage.addListener((request, sender, sendResponse) => {
 
     changeCustomTheme();
   }
+
+  if(message === 'inject css to iframe') {
+    const tabId = sender.tab.id;
+    const contentScripts = browser.runtime.getManifest().content_scripts;
+
+    const injectCSStoIframe = async () => {
+      const allFrames = await browser.webNavigation.getAllFrames(
+        {
+          tabId,
+        },
+      );
+
+      const target = allFrames.filter((f) => {
+        return f.url.match('https://ogs.google')?.length;
+      })[0];
+
+      if(!target) {
+        setTimeout(async () => {
+          injectCSStoIframe();
+        }, 200);
+
+        return;
+      }
+
+      const frameId = target.frameId;
+
+      browser.tabs.insertCSS(
+        tabId,
+        {
+          file: 'menu-iframe.css',
+          frameId,
+        },
+      );
+
+      contentScripts[0].js.forEach((file) => {
+        browser.tabs.executeScript(
+          tabId,
+          {
+            frameId,
+            file,
+          },
+        );
+      });
+    };
+
+    injectCSStoIframe();
+  }
 });
 
+// Block default google translate logo
 browser?.webRequest.onBeforeRequest.addListener((d) => {
   return { cancel: true };
 }, {

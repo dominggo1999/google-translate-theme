@@ -60,7 +60,7 @@ initTheme();
 // Listen for call from popup or option
 runtime.onMessage.addListener((request, sender, sendResponse) => {
   const {
-    message, theme, useCustomTheme, newCustomValues,
+    message, theme, useCustomTheme,
   } = request;
 
   if(message === 'getAllTheme') {
@@ -129,9 +129,7 @@ runtime.onMessage.addListener((request, sender, sendResponse) => {
     const tabId = sender.tab.id;
     const contentScripts = chrome.runtime.getManifest().content_scripts;
 
-    const css = contentScripts[0].css;
-
-    const getAllFrames = async () => {
+    const injetCSStoIframe = async () => {
       const allFrames = await chrome.webNavigation.getAllFrames(
         {
           tabId,
@@ -143,10 +141,8 @@ runtime.onMessage.addListener((request, sender, sendResponse) => {
       })[0];
 
       if(!target) {
-        console.log('lox');
-
         setTimeout(async () => {
-          getAllFrames();
+          injetCSStoIframe();
         }, 200);
 
         return;
@@ -175,10 +171,11 @@ runtime.onMessage.addListener((request, sender, sendResponse) => {
       );
     };
 
-    getAllFrames();
+    injetCSStoIframe();
   }
 });
 
+// Block default google translate logo
 chrome?.declarativeNetRequest.updateDynamicRules({
   addRules: [
     {
