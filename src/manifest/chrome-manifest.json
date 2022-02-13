@@ -54,6 +54,7 @@
     {
       "resources": [
         "theme.css",
+        "menu-iframe.css",
         "themes.js"
       ],
       "matches": [

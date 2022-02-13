@@ -1,0 +1,16 @@
+#yDmH0d > c-wiz > div > div > c-wiz > div > div > ul *, 
+#gb > div.gb_Fd.gb_Wd.gb_Md.gb_Ld > div.gb_Qd.gb_Sa.gb_Ed > div:nth-child(2),
+#yDmH0d > c-wiz > div > div > c-wiz > div > div{
+    background-color : var(--bg-color)!important;
+    color : var(--text-color)!important;
+}
+
+#yDmH0d > c-wiz > div > div > c-wiz > div > div > div.WwFbJd a {
+    background-color : var(--main-color)!important;
+    color :  var(--bg-color)!important;
+    border:none!important;
+}
+
+#yDmH0d > c-wiz > div > div > c-wiz > div > div > span{
+    display : none;
+}

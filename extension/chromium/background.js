@@ -139,10 +139,12 @@ runtime.onMessage.addListener((request, sender, sendResponse) => {
       );
 
       const target = allFrames.filter((f) => {
-        return f.url.match('https://ogs.google.com/')?.length;
+        return f.url.match('https://ogs.google')?.length;
       })[0];
 
       if(!target) {
+        console.log('lox');
+
         setTimeout(async () => {
           getAllFrames();
         }, 200);
@@ -158,7 +160,7 @@ runtime.onMessage.addListener((request, sender, sendResponse) => {
             frameIds: [frameId],
             tabId,
           },
-          files: css,
+          files: ['menu-iframe.css'],
         },
       );
 
