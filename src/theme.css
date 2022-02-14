@@ -99,6 +99,11 @@ header div[role="navigation"] span.gb_wc.gb_ee::before{
     background: rgba(0,0,0,.1) !important;
 } 
 
+/* Circle Border*/
+#yDmH0d > c-wiz a.mqNsCe.myVd4c div.ySES5 {
+    border: 1px solid  var(--text-color)!important;
+} 
+
 /* Middle Logo SVG */
 #yDmH0d > c-wiz  nav > a  div.ySES5 svg {
     color : var(--text-color) !important;
@@ -774,6 +779,17 @@ li.VfPpkd-StrnGf-rymPhb-ibnC6b:hover{
 /* Header */
 .XMNbjd{
     color : var(--main-color)!important; 
+}
+
+/*History Tag */
+#yDmH0d > c-wiz > div > div.GKdr2 > c-wiz > div.D7mJAe > div.IQu6Fd > div{
+    background-color : var(--main-color)!important; 
+    border-color : var(--main-color)!important; 
+}
+
+#yDmH0d > c-wiz > div > div.GKdr2 > c-wiz > div.D7mJAe > div.IQu6Fd > div > .v9p7kc,
+#yDmH0d > c-wiz > div > div.GKdr2 > c-wiz > div.D7mJAe > div.IQu6Fd > div > button > svg{
+    color : var(--bg-color)!important;  
 }
 
 /* No History */
