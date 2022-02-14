@@ -22,13 +22,13 @@
 }
 
 /* Profile Pic Button */
-#yDmH0d > c-wiz > div > div > div > div > div:nth-child(2) > div.ZjaQW > div.evMTre.Dh6YBc > button svg{
+#yDmH0d div.evMTre.Dh6YBc > button svg{
     background-color : var(--main-color)!important;
     color : var(--bg-color)!important;
 }
 
 /*  Accounr email and name*/
-#yDmH0d > c-wiz > div > div > div > div > div:nth-child(2) > div.ZjaQW > div.sYP7qe div{
+#yDmH0d div.sYP7qe div{
     color : var(--text-color)!important;
 }
 
@@ -48,16 +48,24 @@
     display: none;
 }
 
-#yDmH0d > c-wiz > div > div > div > div > div:nth-child(2) > div.piCvSe > span > a,
-#yDmH0d > c-wiz > div > div > div > div > div:nth-child(2) > div.piCvSe > span > a .ZWVAt,
-#yDmH0d > c-wiz > div > div > div > div > div:nth-child(2) > div.piCvSe > span > a > div.YP4xVe > svg{
+#yDmH0d div.piCvSe > span > a,
+#yDmH0d div.piCvSe > span > a .ZWVAt,
+#yDmH0d div.piCvSe > span > a > div.YP4xVe > svg{
     color : var(--text-color)!important;
 }
 
-#yDmH0d > c-wiz > div > div > div > div > div:nth-child(2) > div.piCvSe > span > a:hover,
-#yDmH0d > c-wiz > div > div > div > div > div:nth-child(2) > div.piCvSe > span > a:hover .ZWVAt,
-#yDmH0d > c-wiz > div > div > div > div > div:nth-child(2) > div.piCvSe > span > a:hover > div.YP4xVe > svg {
+#yDmH0d div.piCvSe > span > a:hover,
+#yDmH0d div.piCvSe > span > a:hover .ZWVAt,
+#yDmH0d div.piCvSe > span > a:hover > div.YP4xVe > svg {
     color : var(--bg-color)!important;
 }
 
+/*  No Border */
+#yDmH0d .piCvSe, .EeWTFe {
+    border:none!important;
+}
 
+#yDmH0d div.ZjaQW > span > a,
+#yDmH0d div.EeWTFe > span > a{
+    border: 1px solid var(--text-color)!important;
+}

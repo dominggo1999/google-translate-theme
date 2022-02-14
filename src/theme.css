@@ -939,3 +939,38 @@ textarea, .fMHXgc.qkH7ie > input{
 #yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.OlSOob > c-wiz > div.ccvoYb > div.aCQag > c-wiz > div:nth-child(2) > c-wiz > div.OoYv6d > div > div.dykxn.C96yib.j33Gae > div > div{
     color:var(--main-color) !important;
 }
+
+/* Contribution*/
+/* Header*/
+#yDmH0d > c-wiz > div > div.GKdr2 > div > c-wiz > div > c-wiz > c-wiz{
+    background-color:var(--main-color) !important;
+    color : var(--text-color) !important;
+}
+
+/*  Text */
+#yDmH0d > c-wiz > div > div.GKdr2 > div > c-wiz > div > c-wiz > div > div.oCxMfe > div.ZQWYD, 
+#yDmH0d > c-wiz > div > div.GKdr2 > div > c-wiz > div > c-wiz > div > div.oCxMfe > div.rlqS5d {
+    color : var(--text-color) !important;
+}
+
+/* Link */
+#yDmH0d > c-wiz > div > div.GKdr2 > div > c-wiz > div > c-wiz > div > div.oCxMfe > div.e7YJ3{
+    color : var(--main-color) !important;
+}
+
+/* Buttons */
+#yDmH0d > c-wiz > div > div.GKdr2 > div > c-wiz > div > c-wiz > div > div:nth-child(2) button{
+    background-color : var(--main-color) !important;
+}
+
+#yDmH0d > c-wiz > div > div.GKdr2 > div > c-wiz > div > c-wiz > div > div:nth-child(2) button *{
+    color : var(--bg-color) !important;
+}
+
+#yDmH0d > c-wiz > div > div.GKdr2 > div > c-wiz > div > c-wiz > div > div:nth-child(3) > div > div.VfPpkd-Jh9lGc{
+     border-color : var(--main-color) !important;
+}
+
+#yDmH0d > c-wiz > div > div.GKdr2 > div > c-wiz > div > c-wiz > div > div:nth-child(3) > div > span{
+    color : var(--text-color) !important;
+}
