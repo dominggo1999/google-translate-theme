@@ -1,3 +1,4 @@
+/*Google Menu Section*/
 #yDmH0d > c-wiz > div > div > c-wiz > div > div > ul *, 
 #gb > div.gb_Fd.gb_Wd.gb_Md.gb_Ld > div.gb_Qd.gb_Sa.gb_Ed > div:nth-child(2),
 #yDmH0d > c-wiz > div > div > c-wiz > div > div{
@@ -14,3 +15,49 @@
 #yDmH0d > c-wiz > div > div > c-wiz > div > div > span{
     display : none;
 }
+
+/* Account */
+#yDmH0d > c-wiz > div > div > div > div{
+    background-color : var(--bg-color)!important;
+}
+
+/* Profile Pic Button */
+#yDmH0d > c-wiz > div > div > div > div > div:nth-child(2) > div.ZjaQW > div.evMTre.Dh6YBc > button svg{
+    background-color : var(--main-color)!important;
+    color : var(--bg-color)!important;
+}
+
+/*  Accounr email and name*/
+#yDmH0d > c-wiz > div > div > div > div > div:nth-child(2) > div.ZjaQW > div.sYP7qe div{
+    color : var(--text-color)!important;
+}
+
+/* button */
+#yDmH0d > c-wiz > div > div > div > div span a {
+    color : var(--text-color)!important;
+}
+
+#yDmH0d > c-wiz > div > div > div > div span a:hover {
+    color : var(--bg-color)!important;
+    background-color : var(--main-color)!important;
+    border-color : var(--main-color)!important;
+}
+
+/* Dot on the bottom */
+#yDmH0d > c-wiz > div > div > div > div > div:nth-child(2) > div.dq3Ajb > span.R37Fhd{
+    display: none;
+}
+
+#yDmH0d > c-wiz > div > div > div > div > div:nth-child(2) > div.piCvSe > span > a,
+#yDmH0d > c-wiz > div > div > div > div > div:nth-child(2) > div.piCvSe > span > a .ZWVAt,
+#yDmH0d > c-wiz > div > div > div > div > div:nth-child(2) > div.piCvSe > span > a > div.YP4xVe > svg{
+    color : var(--text-color)!important;
+}
+
+#yDmH0d > c-wiz > div > div > div > div > div:nth-child(2) > div.piCvSe > span > a:hover,
+#yDmH0d > c-wiz > div > div > div > div > div:nth-child(2) > div.piCvSe > span > a:hover .ZWVAt,
+#yDmH0d > c-wiz > div > div > div > div > div:nth-child(2) > div.piCvSe > span > a:hover > div.YP4xVe > svg {
+    color : var(--bg-color)!important;
+}
+
+

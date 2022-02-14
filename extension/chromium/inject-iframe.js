@@ -5,7 +5,7 @@
     await runtime?.sendMessage(message);
   };
 
-  const targetNode = document.querySelector('#gb > div.gb_Jd.gb_0d.gb_Pd.gb_Od > div.gb_Td.gb_Va.gb_Id > div:nth-child(2)');
+  const targetNode = document.querySelectorAll('#gb > div.gb_Jd.gb_0d.gb_Pd.gb_Od > div.gb_Td.gb_Va.gb_Id > div:not(.gb_Pe)');
 
   // Options for the observer (which mutations to observe)
 
@@ -13,22 +13,30 @@
 
   // Callback function to execute when mutations are observed
   const callback = (mutationsList, observer) => {
-    const googleAccountIframe = targetNode.querySelector('#gb > div.gb_Jd.gb_0d.gb_Pd.gb_Od > div.gb_Td.gb_Va.gb_Id > div:nth-child(2) > iframe');
+    for (let i = 0; i < mutationsList.length; i += 1) {
+      const googleAccountIframe = mutationsList[i].target.querySelector('iframe');
+      const src = googleAccountIframe.src;
+      const isApp = src.match('app');
 
-    if(googleAccountIframe) {
-      messageToBackground({
-        message: 'inject css to iframe',
-      });
+      if(googleAccountIframe) {
+        messageToBackground({
+          message: 'inject css to iframe',
+          frameType: isApp ? 'app' : 'account',
+        });
 
-      observer.disconnect();
+        observer.disconnect();
+
+        return;
+      }
     }
   };
 
+  // Start observing the target node for configured mutations
   if(targetNode) {
+    for (let i = 0; i < targetNode.length; i += 1) {
     // Create an observer instance linked to the callback function
-    const observer = new MutationObserver(callback);
-
-    // Start observing the target node for configured mutations
-    observer.observe(targetNode, config);
+      const observer = new MutationObserver(callback);
+      observer.observe(targetNode[i], config);
+    }
   }
 })();

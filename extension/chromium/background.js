@@ -60,7 +60,7 @@ initTheme();
 // Listen for call from popup or option
 runtime.onMessage.addListener((request, sender, sendResponse) => {
   const {
-    message, theme, useCustomTheme,
+    message, theme, useCustomTheme, frameType,
   } = request;
 
   if(message === 'getAllTheme') {
@@ -129,7 +129,7 @@ runtime.onMessage.addListener((request, sender, sendResponse) => {
     const tabId = sender.tab.id;
     const contentScripts = chrome.runtime.getManifest().content_scripts;
 
-    const injetCSStoIframe = async () => {
+    const injectCSStoIframe = async (type) => {
       const allFrames = await chrome.webNavigation.getAllFrames(
         {
           tabId,
@@ -137,12 +137,12 @@ runtime.onMessage.addListener((request, sender, sendResponse) => {
       );
 
       const target = allFrames.filter((f) => {
-        return f.url.match('https://ogs.google')?.length;
+        return f.url.match(type)?.length;
       })[0];
 
       if(!target) {
         setTimeout(async () => {
-          injetCSStoIframe();
+          injectCSStoIframe(type);
         }, 200);
 
         return;
@@ -171,7 +171,7 @@ runtime.onMessage.addListener((request, sender, sendResponse) => {
       );
     };
 
-    injetCSStoIframe();
+    injectCSStoIframe(frameType);
   }
 });
 
