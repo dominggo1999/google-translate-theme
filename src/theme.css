@@ -123,13 +123,13 @@ header div[role="navigation"] span.gb_wc.gb_ee::before{
 }
 
 /* Button On Translation Type */
- .hgbeOc > nav > div button {
+#yDmH0d > c-wiz > div > div.WFnNle > c-wiz nav > div button {
     background-color : var(--main-color)!important; 
     border : none;
 }
 
-.hgbeOc > nav > div button .VfPpkd-vQzf8d, 
-.hgbeOc > nav > div button i.material-icons-extended.VfPpkd-kBDsod.ep0rzf{
+.U0xwnf div button span, 
+.U0xwnf div button i.material-icons-extended{
     color :  var(--bg-color)!important;    
 }
 
