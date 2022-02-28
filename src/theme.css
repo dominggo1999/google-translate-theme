@@ -938,6 +938,48 @@ textarea, .fMHXgc.qkH7ie > input{
     color:var(--text-color) !important;
 }
 
+/* Website Type  Section*/
+/* Background */
+#yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.V5t8Zd > c-wiz > div.FM9KDb > div{
+    background-color : var(--bg-color) !important;
+}
+
+/* Input */
+#i52{
+    color : var(--text-color) !important;
+    caret-color : var(--main-color) !important;
+}
+#yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.V5t8Zd > c-wiz > div.FM9KDb > div > div.Ufn6O.WF7oQb > label > span > span{
+    border-color : var(--text-color) !important;
+}
+
+/* Arrow button */
+#yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.V5t8Zd > c-wiz > div.FM9KDb > div > span > button {
+    background : var(--main-color) !important;
+}
+
+/* Arrow icon */
+#yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.V5t8Zd > c-wiz > div.FM9KDb > div > span > button > span svg {
+    fill :  var(--background-color) !important;
+}
+
+/* Clear button */
+#yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.V5t8Zd > c-wiz > div.FM9KDb > div > div.Ufn6O.WF7oQb > label > div > div > div:nth-child(1) > span > span svg{
+    fill :  var(--text-color) !important;
+}
+
+
+/*Valid url message*/
+#yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.V5t8Zd > c-wiz > div.FM9KDb > div > div.Ufn6O.WF7oQb > div{
+    color :  var(--main-color) !important;
+}
+
+#i51{
+    color :  var(--sub-color) !important;
+}
+
+
+
 /* Powered By Cloud */
 #yDmH0d > c-wiz > div > div.WFnNle > c-wiz > div.R5HjH > c-wiz > div.oLbzv > c-wiz > div > div.sp2Bqb {
     background:var(--bg-color) !important;
